@@ -17,7 +17,7 @@ Este documento estabelece as diretrizes fundamentais para qualquer agente de IA 
     *   **Arquitetura:** Siga rigorosamente a **Arquitetura Hexagonal** no backend (Go Chi) e padrões de **Local-first** no frontend.
 
 4.  **Estilo de Código:**
-    *   Siga as convenções de estilo definidas em `docs/STANDARDS.md`.
+    *   Siga as convenções de estilo definidas em `STANDARDS.md`.
     *   Commits devem seguir o padrão **Semantic Commit + Gitmoji** (ADR-006).
 
 5.  **Contexto e Eficiência:**

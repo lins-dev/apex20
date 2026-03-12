@@ -36,7 +36,7 @@ Após eu responder as perguntas acima, você deverá gerar os seguintes arquivos
    - Guia de Início Rápido (Docker/Setup).
    - Links para os arquivos de arquitetura e padrões.
 
-2. **`GEMINI.md` ou `AI_MANDATES.md` (Fluxo da IA):**
+2. **`docs/GEMINI.md` ou `AI_MANDATES.md` (Fluxo da IA):**
    - Definir a "Fonte da Verdade" (geralmente TASKS.md).
    - Regras de execução de comandos e commits.
    - Protocolo de confirmação e idioma de resposta.
@@ -46,7 +46,7 @@ Após eu responder as perguntas acima, você deverá gerar os seguintes arquivos
    - Checkboxes de progresso.
    - Definição de "Done" para cada tarefa.
 
-4. **`ARCHITECTURE.md` (O Cérebro):**
+4. **`docs/ARCHITECTURE.md` (O Cérebro):**
    - Descrição das camadas (API, Business Logic, Persistence).
    - Fluxo de dados simplificado.
 

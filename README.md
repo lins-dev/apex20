@@ -52,7 +52,7 @@ pnpm dev
 
 ## 📖 Documentação Adicional
 
-- [Arquitetura](./ARCHITECTURE.md)
+- [Arquitetura](./docs/ARCHITECTURE.md)
 - [Product Requirements Document (PRD)](./docs/PRD.md)
 - [Roadmap & Tasks](./docs/TASKS.md)
 - [Style Guide & Standards](./docs/STANDARDS.md)
