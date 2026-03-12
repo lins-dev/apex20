@@ -1,0 +1,95 @@
+# Roadmap de Desenvolvimento (TASKS.md) 🚀
+
+Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20**.
+
+## 🏗️ Sprint 0: Definições Arquiteturais (Formalização)
+**Objetivo:** Consolidar as decisões críticas de infraestrutura e governança.
+
+- [ ] Criar ADR-002: Estratégia de Autenticação Cross-Service (JWT/RS256).
+- [ ] Criar ADR-003: Padronização de Erros e Respostas (RFC 7807) p/ i18n.
+- [ ] Criar ADR-004: Escolha de Ferramenta de Migração (golang-migrate vs Atlas).
+- [ ] Criar ADR-005: Definição do Gerenciador de Pacotes (pnpm Workspaces).
+- [ ] Criar ADR-008: Engine de Fichas Dinâmicas (JSONB vs EAV vs Scripting).
+- [ ] Criar ADR-009: Estratégia de Observabilidade (OpenTelemetry + Prometheus).
+- [ ] Criar ADR-010: Estratégia de Pirâmide de Testes e QA (Playwright + Testcontainers).
+- [ ] Criar ADR-011: Estratégia de Sincronização e Resolução de Conflitos.
+- [ ] Criar ADR-012: Estratégia de Voz e Vídeo Integrada (WebRTC/LiveKit).
+- [ ] Criar ADR-013: Padrões de Acessibilidade (a11y) e Design Inclusivo.
+- [ ] Criar ADR-014: Arquitetura de Plugins e Extensibilidade (Sandboxing).
+- [ ] Criar ADR-015: Conformidade com Privacidade (LGPD/GDPR) e Segurança.
+- [ ] Criar ADR-016: Estratégia de Geração de Números Aleatórios (RNG Verificável).
+- [ ] Criar ADR-017: Persistência de Estado Real-time e Snapshotting da Mesa.
+- [ ] Criar ADR-018: Gestão de Cotas de Recursos (Storage/IA) e Limites.
+- [ ] Criar ADR-019: Estratégia de Escalonamento e Service Discovery para WebSockets.
+- [ ] Criar ADR-020: Interface de Sensores e Estratégia de Fallback para CV/AR.
+- [ ] Criar ADR-021: Rate Limiting, Throttling e Proteção de WebSocket (Anti-Griefing).
+- [ ] Criar ADR-022: Estratégia de Zero-Downtime Deployment para Sockets ativos.
+- [ ] Criar ADR-023: Versionamento de Assets e Invalidação de Cache (Content Hashing).
+- [ ] Criar ADR-024: Estratégia de Telemetria e Error Tracking (Client-side).
+- [ ] Criar ADR-025: Gestão de Estados de Jogo e Máquinas de Estado (XState/Zustand).
+- [ ] Criar ADR-026: Infraestrutura de Keyboard-First UX e Command Palette.
+- [ ] Criar ADR-027: Ferramentas de Developer Experience (DX) e CLI Interna.
+- [ ] Criar ADR-028: Estratégia de Distribuição Global e Minimização de Latência.
+- [ ] Criar ADR-029: Estratégia de Licenciamento de Conteúdo (OGL/ORC/SRD).
+- [ ] Criar ADR-030: Orçamento de Performance e Monitoramento de WebVitals.
+- [ ] Criar ADR-031: Documentação de Design System (Storybook) e Testes Visuais.
+- [ ] Criar ADR-032: Estratégia de Monetização e Pagamentos (Stripe vs Gateways Locais).
+- [ ] Criar ADR-033: Automação de Faturamento e Emissão de Notas Fiscais (NF-e).
+- [ ] Validar Fluxo de CI/CD inicial e Docker Registry.
+
+## 🛠️ Sprint 1: Infraestrutura e Contratos (Core)
+**Objetivo:** Estabelecer a base do monorepo e comunicação entre serviços.
+
+- [ ] Setup do Monorepo com Turborepo (Go, Next.js, Expo).
+- [ ] Definição de Schemas Protobuf em `packages/contracts` (Handshake, Chat e GridEvents).
+- [ ] Implementação do Middleware de Permissões de Grid (ACL: Quem move o quê).
+- [ ] Configuração do Backend Go (Chi + Arquitetura Hexagonal + sqlc).
+- [ ] Setup do Docker Compose local (PostgreSQL, Redis, Prometheus/Grafana).
+- [ ] Implementação do serviço de WebSocket básico com Redis Pub/Sub.
+- [ ] Boilerplate da aplicação Next.js com shadcn/ui.
+- [ ] Setup inicial de `packages/i18n` (EN, PT-BR, ES, FR).
+
+## ⚔️ Sprint 2: Mecânicas de Jogo e Sincronização
+**Objetivo:** Implementar o grid e o sistema de combate em tempo real.
+
+- [ ] Sistema de Grid com movimentação de tokens (Optimistic UI).
+- [ ] Rolagem de dados e Chat sincronizado via WebSocket.
+- [ ] Implementação do Storage via **Cloudflare R2** (Maps, Tokens e Assets).
+- [ ] Pipeline de Otimização Automática de Assets (WebP/AVIF).
+- [ ] CRUD de Campanhas e Personagens (Fichas dinâmicas).
+- [ ] Sistema de internacionalização (i18n) funcional em todos os apps.
+
+## 📱 Sprint 3: Mobile e Experiência do Jogador
+**Objetivo:** Lançar o app mobile e refinar a UI.
+
+- [ ] Desenvolvimento do App Mobile (Expo + NativeWind).
+- [ ] Integração Mobile com WS-Service para controle remoto de ficha.
+- [ ] Implementação de Realidade Aumentada (WebXR) inicial para projeção de grid.
+- [ ] Sistema de autenticação (OAuth2/JWT compartilhado entre API e WS).
+- [ ] Início da implementação do **Foundry VTT Importer** (JSON mapping).
+
+## 🤖 Sprint 4: Inteligência e Visão
+**Objetivo:** Adicionar os recursos avançados de IA e CV.
+
+- [ ] Integração **MediaPipe** para reconhecimento de gestos (Lançar dados).
+- [ ] Sistema de **Logging de Eventos** para geração de histórico de sessão.
+- [ ] Automação de **Resumos de Sessão via IA** consumindo logs estruturados.
+- [ ] Disparo de resumos via Microserviço externo (WhatsApp, Telegram, E-mail).
+- [ ] Refinamento da iluminação dinâmica e névoa de guerra (FOW).
+
+## 💻 Sprint 5: Ecossistema Desktop e Polimento
+**Objetivo:** Criar a versão desktop e preparar para o lançamento.
+
+- [ ] Empacotamento Desktop: Escolha final entre **Tauri** ou **Electron**.
+- [ ] Integração do App Desktop com o código-fonte de `apps/web`.
+- [ ] Refatoração e otimização de performance (Go Profiling e JS bundle size).
+- [ ] Documentação completa de API para desenvolvedores externos.
+- [ ] Lançamento da versão Alpha/Beta pública.
+
+---
+
+**Legenda de Status:**
+- 🔴 Não Iniciado
+- 🟡 Em Progresso
+- 🟢 Concluído
+- ⚙️ Bloqueado

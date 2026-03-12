@@ -1,0 +1,7 @@
+node_modules/
+.turbo/
+.next/
+dist/
+bin/
+.env
+*.log print git init && echo 'node_modules/\n.turbo/\n.next/\ndist/\nbin/\n.env\n*.log' > .gitignore
