@@ -5,21 +5,22 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 ## 🏗️ Sprint 0: Definições Arquiteturais (Formalização)
 **Objetivo:** Consolidar as decisões críticas de infraestrutura e governança.
 
-- [ ] Criar ADR-002: Estratégia de Autenticação Cross-Service (JWT/RS256).
-- [ ] Criar ADR-003: Padronização de Erros e Respostas (RFC 7807) p/ i18n.
-- [ ] Criar ADR-004: Escolha de Ferramenta de Migração (golang-migrate vs Atlas).
-- [ ] Criar ADR-005: Definição do Gerenciador de Pacotes (pnpm Workspaces).
-- [ ] Criar ADR-008: Engine de Fichas Dinâmicas (JSONB vs EAV vs Scripting).
-- [ ] Criar ADR-009: Estratégia de Observabilidade (OpenTelemetry + Prometheus).
-- [ ] Criar ADR-010: Estratégia de Pirâmide de Testes e QA (Playwright + Testcontainers).
-- [ ] Criar ADR-011: Estratégia de Sincronização e Resolução de Conflitos.
-- [ ] Criar ADR-012: Estratégia de Voz e Vídeo Integrada (WebRTC/LiveKit).
-- [ ] Criar ADR-013: Padrões de Acessibilidade (a11y) e Design Inclusivo.
-- [ ] Criar ADR-014: Arquitetura de Plugins e Extensibilidade (Sandboxing).
-- [ ] Criar ADR-015: Conformidade com Privacidade (LGPD/GDPR) e Segurança.
-- [ ] Criar ADR-016: Estratégia de Geração de Números Aleatórios (RNG Verificável).
-- [ ] Criar ADR-017: Persistência de Estado Real-time e Snapshotting da Mesa.
-- [ ] Criar ADR-018: Gestão de Cotas de Recursos (Storage/IA) e Limites.
+- [x] Criar ADR-002: Estratégia de Autenticação Cross-Service (JWT/RS256).
+- [x] Criar ADR-003: Padronização de Erros e Respostas (RFC 7807) p/ i18n.
+- [x] Criar ADR-004: Escolha de Ferramenta de Migração (golang-migrate vs Atlas).
+- [x] Criar ADR-005: Definição do Gerenciador de Pacotes (pnpm Workspaces).
+- [x] Criar ADR-007: Estratégia de Contratos e Serialização (Protobuf + ConnectRPC).
+- [x] Criar ADR-008: Engine de Fichas Dinâmicas (JSONB vs EAV vs Scripting).
+- [x] Criar ADR-009: Estratégia de Observabilidade (OpenTelemetry + Prometheus).
+- [x] Criar ADR-010: Estratégia de Pirâmide de Testes e QA (Playwright + Testcontainers).
+- [x] Criar ADR-011: Estratégia de Sincronização e Resolução de Conflitos.
+- [x] Criar ADR-012: Estratégia de Voz e Vídeo Integrada (WebRTC/LiveKit).
+- [x] Criar ADR-013: Padrões de Acessibilidade (a11y) e Design Inclusivo.
+- [x] Criar ADR-014: Arquitetura de Plugins e Extensibilidade (Sandboxing).
+- [x] Criar ADR-015: Conformidade com Privacidade (LGPD/GDPR) e Segurança.
+- [x] Criar ADR-016: Estratégia de Geração de Números Aleatórios (RNG Verificável).
+- [x] Criar ADR-017: Persistência de Estado Real-time e Snapshotting da Mesa.
+- [x] Criar ADR-018: Gestão de Cotas de Recursos (Storage/IA) e Limites.
 - [ ] Criar ADR-019: Estratégia de Escalonamento e Service Discovery para WebSockets.
 - [ ] Criar ADR-020: Interface de Sensores e Estratégia de Fallback para CV/AR.
 - [ ] Criar ADR-021: Rate Limiting, Throttling e Proteção de WebSocket (Anti-Griefing).
