@@ -21,11 +21,12 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Criar ADR-016: Estratégia de Geração de Números Aleatórios (RNG Verificável).
 - [x] Criar ADR-017: Persistência de Estado Real-time e Snapshotting da Mesa.
 - [x] Criar ADR-018: Gestão de Cotas de Recursos (Storage/IA) e Limites.
-- [ ] Criar ADR-019: Estratégia de Escalonamento e Service Discovery para WebSockets.
-- [ ] Criar ADR-020: Interface de Sensores e Estratégia de Fallback para CV/AR.
-- [ ] Criar ADR-021: Rate Limiting, Throttling e Proteção de WebSocket (Anti-Griefing).
-- [ ] Criar ADR-022: Estratégia de Zero-Downtime Deployment para Sockets ativos.
-- [ ] Criar ADR-023: Versionamento de Assets e Invalidação de Cache (Content Hashing).
+- [x] Criar ADR-019: Estratégia de Escalonamento e Service Discovery para WebSockets.
+- [x] Criar ADR-020: Interface de Sensores e Estratégia de Fallback para CV/AR.
+- [x] Criar ADR-021: Rate Limiting, Throttling e Proteção de WebSocket (Anti-Griefing).
+- [x] Criar ADR-022: Estratégia de Zero-Downtime Deployment para Sockets ativos.
+- [x] Criar ADR-034: Resiliência de Dados e Consistência Distribuída.
+- [x] Criar ADR-023: Versionamento de Assets e Invalidação de Cache (Content Hashing).
 - [ ] Criar ADR-024: Estratégia de Telemetria e Error Tracking (Client-side).
 - [ ] Criar ADR-025: Gestão de Estados de Jogo e Máquinas de Estado (XState/Zustand).
 - [ ] Criar ADR-026: Infraestrutura de Keyboard-First UX e Command Palette.
