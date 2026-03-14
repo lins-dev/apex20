@@ -31,14 +31,20 @@ O Apex20 armazena grandes volumes de assets (mapas em 4K, tokens, áudios) no **
     - Conversão automática de imagens para **WebP/AVIF** para reduzir o tamanho.
     - Geração de **BlurHash** ou **Thumbnails** de baixa resolução para carregamento progressivo (LCP improvement).
 
+### 5. Ciclo de Vida e Limpeza (Garbage Collection)
+- **Substituição de Versão:** Quando um usuário atualiza um asset (ex: nova versão de um mapa), o sistema gera um novo Hash. A versão antiga permanece no storage até ser identificada como órfã.
+- **Processo de Cleanup (GC):** Um serviço de background executará periodicamente uma varredura para identificar hashes no Cloudflare R2 que **não possuem referências** em nenhuma tabela do banco de dados (Cenas, Mapas, Personagens).
+- **Segurança (Grace Period):** Para evitar a deleção de arquivos em trânsito (recém-enviados mas ainda não persistidos no banco), o GC apenas removerá objetos com data de criação superior a **12 horas**.
+- **Deduplicação Global:** O arquivo físico só é removido se nenhuma outra campanha (mesmo de usuários diferentes, se a deduplicação estiver ativa) o referenciar.
+
 ## Justificativa
 - **Performance:** URLs imutáveis permitem que o navegador nunca precise re-baixar um mapa que já está no cache local.
-- **Custo:** Redução drástica no tráfego de saída (egress) da CDN.
+- **Custo e Sustentabilidade:** O processo de GC garante que versões antigas e inúteis de mapas 4K não ocupem espaço permanentemente, mantendo o custo de storage controlado.
 - **Simplicidade:** Elimina a lógica complexa de "cache invalidation" por tempo ou tags.
 
 ## Consequências
-- **Positivas:** Carregamento de mapas instantâneo para jogadores que já os acessaram; eliminação de erros de "asset não atualizado".
-- **Negativas:** O armazenamento pode crescer se não houver um processo de "Garbage Collection" para deletar hashes que não são mais referenciados por nenhuma campanha no banco de dados.
+- **Positivas:** Carregamento de mapas instantâneo para jogadores que já os acessaram; controle automático de crescimento do storage.
+- **Negativas:** Adiciona complexidade na infraestrutura de background jobs para gerenciar a limpeza de forma segura e atômica.
 
 ## Referências
 - **ADR-001:** Escolha da Stack (Cloudflare R2).
