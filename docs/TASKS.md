@@ -35,8 +35,8 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Criar ADR-029: Estratégia de Licenciamento de Conteúdo (OGL/ORC/SRD).
 - [x] Criar ADR-030: Orçamento de Performance e Monitoramento de WebVitals.
 - [x] Criar ADR-031: Documentação de Design System (Storybook) e Testes Visuais.
-- [ ] Criar ADR-032: Estratégia de Monetização e Pagamentos (Stripe vs Gateways Locais).
-- [ ] Criar ADR-033: Automação de Faturamento e Emissão de Notas Fiscais (NF-e).
+- [x] Criar ADR-032: Estratégia de Monetização e Pagamentos (Stripe vs Gateways Locais).
+- [x] Criar ADR-033: Automação de Faturamento e Emissão de Notas Fiscais (NF-e).
 - [ ] Validar Fluxo de CI/CD inicial e Docker Registry.
 
 ## 🛠️ Sprint 1: Infraestrutura e Contratos (Core)
