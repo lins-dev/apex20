@@ -29,7 +29,7 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Criar ADR-023: Versionamento de Assets e Invalidação de Cache (Content Hashing).
 - [ ] Criar ADR-024: Estratégia de Telemetria e Error Tracking (Client-side).
 - [x] Criar ADR-025: Gestão de Estados de Jogo e Máquinas de Estado (XState/Zustand).
-- [ ] Criar ADR-026: Infraestrutura de Keyboard-First UX e Command Palette.
+- [x] Criar ADR-026: Infraestrutura de Keyboard-First UX e Command Palette.
 - [x] Criar ADR-027: Ferramentas de Developer Experience (DX) e CLI Interna.
 - [x] Criar ADR-028: Estratégia de Distribuição Global e Minimização de Latência.
 - [ ] Criar ADR-029: Estratégia de Licenciamento de Conteúdo (OGL/ORC/SRD).
