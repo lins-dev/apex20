@@ -35,3 +35,6 @@ Implementar um sistema centralizado de **Gestão de Cotas e Limites** baseado em
 ## Alternativas Consideradas
 - **Pay-as-you-go Puro**: Rejeitado pela dificuldade de planejamento financeiro para o usuário final.
 - **Sem Limites (Tamanho Único)**: Rejeitado por ser insustentável em um modelo SaaS gratuito/freemium.
+
+## Referências
+- **ADR-023:** Versionamento de Assets (Deduplicação).

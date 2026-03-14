@@ -36,6 +36,6 @@ O Apex20 é um sistema de alta performance projetado para ser **Local-first** e 
 - **Negativas:** Armazenamento de UUIDs consome 16 bytes (vs 8 bytes de um BigInt), gerando um aumento marginal no tamanho do banco de dados (compensado pela eficiência de índice).
 
 ## Referências
-- **ADR-004:** Migrações (Será atualizada para refletir UUIDv7).
+- **ADR-004:** Migrações (Uso de Tern e UUIDv7).
 - **ADR-017:** Persistência de Snapshotting.
 - **ADR-019:** Escalonamento de WebSockets.

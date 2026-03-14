@@ -40,3 +40,7 @@ Adotar o princípio de **Privacy by Design** e estabelecer camadas rigorosas de 
 ## Alternativas Consideradas
 - **Segurança Reativa**: Rejeitado, pois lidar com segurança apenas após incidentes é inaceitável para um produto de alta disponibilidade.
 - **Hospedagem em Servidores Próprios (Sem Cloudflare)**: Rejeitado pela complexidade e custo de gerenciar mitigação de DDoS e conformidade física de data center.
+
+## Referências
+- **ADR-008:** Engine de Fichas (WASM).
+- **ADR-014:** Arquitetura de Plugins (Iframes).

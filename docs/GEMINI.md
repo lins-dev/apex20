@@ -24,6 +24,10 @@ Este documento estabelece as diretrizes fundamentais para qualquer agente de IA 
     *   Analise o contexto do monorepo antes de propor mudanças.
     *   Mantenha a consistência entre os pacotes do Turborepo.
 
+6.  **Foco na Demanda:**
+    *   A IA deve realizar **estritamente o que for solicitado** pelo usuário.
+    *   Não inicie novas tarefas, implementações ou criação de arquivos sem um comando explícito.
+
 ## 🛠 Ferramentas Preferenciais
 
 *   **Backend:** Go 1.22+, Chi, sqlc, Protobuf.

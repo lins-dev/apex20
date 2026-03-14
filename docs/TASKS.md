@@ -7,7 +7,7 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 
 - [x] Criar ADR-002: Estratégia de Autenticação Cross-Service (JWT/RS256).
 - [x] Criar ADR-003: Padronização de Erros e Respostas (RFC 7807) p/ i18n.
-- [x] Criar ADR-004: Escolha de Ferramenta de Migração (golang-migrate vs Atlas).
+- [x] Criar ADR-004: Escolha de Ferramenta de Migração (Tern).
 - [x] Criar ADR-005: Definição do Gerenciador de Pacotes (pnpm Workspaces).
 - [x] Criar ADR-007: Estratégia de Contratos e Serialização (Protobuf + ConnectRPC).
 - [x] Criar ADR-008: Engine de Fichas Dinâmicas (JSONB vs EAV vs Scripting).

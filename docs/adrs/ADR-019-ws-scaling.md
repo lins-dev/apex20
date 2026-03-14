@@ -34,3 +34,8 @@ Adotar uma arquitetura de **Escalonamento Horizontal Stateless** utilizando **Re
 ## Alternativas Consideradas
 - **Nats.io**: Excelente, mas introduziria mais uma peça de infraestrutura. O Redis já é requisito.
 - **Distribuição Direta via gRPC**: Complexo de gerenciar as rotas de cada conexão ativa dinamicamente.
+
+## Referências
+- **ADR-002:** Autenticação JWT (RS256).
+- **ADR-007:** Estratégia de Contratos (Protobuf).
+- **ADR-034:** Resiliência de Dados.

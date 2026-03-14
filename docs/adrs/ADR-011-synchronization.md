@@ -34,3 +34,6 @@ Adotar uma estratégia híbrida de **Optimistic UI** com **Autoridade do Servido
 ## Alternativas Consideradas
 - **Locking Estrito (Hard Lock)**: Rejeitado por prejudicar a fluidez (exigiria esperar o servidor confirmar o clique antes de permitir o arraste).
 - **CRDTs (Conflict-free Replicated Data Types)**: Rejeitado pela complexidade de implementação e overhead de memória para este estágio do projeto (pode ser reconsiderado para edição colaborativa de notas de texto longo).
+
+## Referências
+- **ADR-007:** Estratégia de Contratos (Protobuf).

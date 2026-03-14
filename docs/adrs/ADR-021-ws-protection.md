@@ -41,6 +41,8 @@ Para eventos de alta frequência (movimento de tokens), o servidor aplicará um 
 - **Negativas:** Usuários com conexões instáveis ou scripts legítimos de automação de terceiros podem ser bloqueados se não seguirem as janelas de rate limit (necessário fornecer SDK de plugins com throttling embutido, ADR-014).
 
 ## Referências
+- **ADR-002:** Autenticação JWT (RS256).
+- **ADR-007:** Estratégia de Contratos (Protobuf).
 - **ADR-014:** Arquitetura de Plugins.
 - **ADR-018:** Gestão de Cotas de Recursos.
 - **ADR-019:** Escalonamento de WebSockets.

@@ -37,3 +37,7 @@ Adotar uma arquitetura de **Sandboxed Plugins via Iframe Isolado** com um **SDK 
 ## Alternativas Consideradas
 - **Execução Direta (Estilo Foundry)**: Rejeitado por ser inseguro em ambiente Cloud/SaaS.
 - **Web Workers + Shadow DOM**: Rejeitado pois o isolamento de dados e origem é inferior ao oferecido por iframes sandboxed.
+
+## Referências
+- **ADR-008:** Engine de Fichas (WASM).
+- **ADR-015:** Privacidade e Segurança.

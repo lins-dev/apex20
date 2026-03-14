@@ -41,5 +41,6 @@ O SDK do frontend (Web/Mobile) deve tratar desconexões como eventos "normais":
 - **Negativas:** Deploys tornam-se mais lentos (precisam aguardar o `grace_period` das instâncias antigas); o orquestrador (K3s) precisa de mais recursos (CPU/RAM) temporários para rodar a versão Antiga e a Nova simultaneamente durante o rollout.
 
 ## Referências
+- **ADR-007:** Estratégia de Contratos (Protobuf).
 - **ADR-019:** Escalonamento de WebSockets.
 - **ADR-034:** Resiliência de Dados.

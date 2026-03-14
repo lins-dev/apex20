@@ -31,3 +31,7 @@ Adotar uma arquitetura de **Sandboxed JavaScript utilizando WebAssembly (WASM)**
 ## Consequências
 - **Positivas**: Flexibilidade extrema para sistemas de RPG; comunidade familiarizada com a stack; segurança de nível empresarial.
 - **Negativas**: Leve overhead de performance ao transitar dados entre o JS principal e o Sandbox WASM; necessidade de manter o motor QuickJS-WASM atualizado.
+
+## Referências
+- **ADR-014:** Arquitetura de Plugins (Iframes).
+- **ADR-015:** Privacidade e Segurança.
