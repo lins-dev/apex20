@@ -1,35 +1,47 @@
-# ADR-010: Estratégia de Pirâmide de Testes e QA (Playwright + Testcontainers) 🧪
+# ADR-010: Estratégia de Testes (TDD Rigoroso e Testcontainers) 🧪🛡️
 
-**Data:** 2026-03-12
-**Status:** Aceito
+**Data:** 2026-03-14
+**Status:** Aceito (Atualizado)
 
 ## Contexto
-O Apex20 é um sistema complexo com lógica de tempo real e múltiplas integrações. Depender apenas de testes manuais é lento, caro e propenso a erros. Precisamos de uma estratégia de testes automatizados que garanta a integridade das regras de negócio, a correção das consultas SQL e a experiência do usuário final de forma contínua.
+O Apex20 exige alta confiabilidade e resiliência a refatorações. Erros em lógica de combate ou sincronização de dados podem arruinar a experiência do usuário. Para garantir a qualidade "Elite Standard", precisamos de uma metodologia de desenvolvimento que minimize bugs desde a concepção e uma infraestrutura de testes que replique fielmente o ambiente de produção, evitando falsos positivos causados por bancos de dados em memória ou mocks excessivos.
 
 ## Decisão
-Adotar uma estratégia baseada na **Pirâmide de Testes**, priorizando a automação em diferentes níveis de isolamento.
+Adotar o **TDD (Test-Driven Development)** como metodologia obrigatória e o uso de **Testcontainers** para validação de infraestrutura real.
 
-1.  **Unit Tests (Go / Vitest)**:
-    - Foco em funções puras, lógica de cálculo de fichas e componentes UI isolados.
-    - Devem ser rápidos e executados a cada save.
-2.  **Integration Tests (Go + Testcontainers)**:
-    - Utilizar **Testcontainers** para subir instâncias reais de PostgreSQL e Redis durante os testes de repositório no Backend.
-    - Garante que as consultas geradas pelo `sqlc` e a lógica de Pub/Sub funcionam contra bancos de dados reais, não mocks.
-3.  **E2E - End-to-End Tests (Playwright)**:
-    - Testar fluxos críticos do usuário (Login, Criação de Campanha, Movimentação no Grid).
-    - Executar contra o ambiente completo (Frontend + Backend + WS) para garantir que a integração entre serviços está funcional.
-4.  **Contract Testing (Protobuf)**:
-    - Validar que as mensagens trocadas via ConnectRPC e WebSocket seguem rigorosamente os esquemas definidos em `packages/contracts`.
+### 1. Metodologia TDD (Red-Green-Refactor)
+- **Mandato:** Nenhuma funcionalidade ou correção de bug deve ser iniciada sem a escrita prévia de um teste que falhe (RED).
+- **Ciclo:** O código deve ser escrito estritamente para fazer o teste passar (GREEN) e, em seguida, limpo e otimizado (REFACTOR).
+- **Cobertura:** Alvo de **100% de cobertura de requisitos** e **> 90% de cobertura de código**. Exceções a este rigor devem ser raras e formalmente justificadas.
+
+### 2. Infraestrutura de Testes de Integração (Testcontainers)
+- **Proibição:** É terminantemente proibido o uso de SQLite ou bancos em memória para testar camadas de persistência que utilizam PostgreSQL em produção.
+- **Fidelidade:** Utilizar a biblioteca **Testcontainers** para subir instâncias reais e efêmeras de:
+    - **PostgreSQL:** Para validar consultas `sqlc`, migrações `tern` e integridade referencial.
+    - **Redis:** Para validar a lógica de Pub/Sub e cache do `ws-service`.
+    - **RabbitMQ:** Para validar o roteamento e processamento de mensagens assíncronas.
+- **Isolamento:** Cada suíte de teste deve operar em containers limpos para evitar poluição de estado entre execuções.
+
+### 3. Modelo Híbrido: Pirâmide + Troféu de Testes
+- **Unitários (Base):** Testes de lógica pura, rápidos e independentes (Vitest / Go Test).
+- **Integração (Corpo):** Foco massivo em validar a interação entre o código e os serviços reais (Postgres/Redis).
+- **E2E (Topo):** Fluxos críticos de usuário validados via **Playwright**, simulando a experiência real de ponta a ponta.
+
+### 4. Automação e Pre-commit
+- Os testes unitários e de integração leves devem ser executados localmente via Git Hooks antes de qualquer commit (ADR-006).
+- O pipeline de CI/CD (GitHub Actions) executará a suíte completa de testes antes de qualquer merge para as branches `dev` ou `master`.
 
 ## Justificativa
-- **Confiança (Integration)**: Testcontainers elimina o "funciona na minha máquina", testando contra a mesma versão de banco de dados usada em produção.
-- **Resiliência (E2E)**: Playwright permite simular interações complexas no navegador, incluindo testes de latência e concorrência no WebSocket.
-- **Eficiência**: A pirâmide garante que a maioria dos bugs seja capturada nos níveis inferiores (Unit/Integration), que são mais baratos e rápidos de executar.
+- **Confiabilidade Máxima:** Testcontainers elimina o "funciona na minha máquina", garantindo que o código seja validado contra o mesmo motor de banco de dados de produção.
+- **Design de Código:** O TDD força o desacoplamento e a criação de interfaces limpas, facilitando a manutenção futura.
+- **Segurança em Refatorações:** A alta cobertura permite realizar mudanças profundas na arquitetura com a certeza de que as regras de negócio permanecem íntegras.
 
 ## Consequências
-- **Positivas**: Redução drástica de regressões; documentação viva do comportamento do sistema; facilidade em realizar refatorações seguras.
-- **Negativas**: Maior tempo inicial de setup dos ambientes de teste (Docker necessário para Testcontainers); execução de testes E2E em CI/CD pode ser lenta e exigir recursos de hardware.
+- **Positivas:** Redução drástica de bugs em produção; documentação técnica sempre atualizada via testes; arquitetura modular e testável por padrão.
+- **Negativas:** Curva de aprendizado inicial para TDD rigoroso; tempo de execução da suíte de testes é superior ao uso de mocks simples (compensado pelo cache do Turborepo).
 
-## Alternativas Consideradas
-- **Mocks de Banco de Dados**: Rejeitado pois mocks frequentemente falham em replicar comportamentos específicos do PostgreSQL (triggers, JSONB, constraints).
-- **Testes Manuais apenas**: Rejeitado pela impossibilidade de escalar e garantir qualidade em um sistema de alta performance.
+## Referências
+- **ADR-004:** Migrações (Tern e PostgreSQL).
+- **ADR-011:** Sincronização e Resolução de Conflitos.
+- **ADR-019:** Escalonamento de WebSockets (Redis).
+- **ADR-034:** Resiliência de Dados (UUIDv7).
