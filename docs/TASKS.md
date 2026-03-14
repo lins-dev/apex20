@@ -32,7 +32,7 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Criar ADR-026: Infraestrutura de Keyboard-First UX e Command Palette.
 - [x] Criar ADR-027: Ferramentas de Developer Experience (DX) e CLI Interna.
 - [x] Criar ADR-028: Estratégia de Distribuição Global e Minimização de Latência.
-- [ ] Criar ADR-029: Estratégia de Licenciamento de Conteúdo (OGL/ORC/SRD).
+- [x] Criar ADR-029: Estratégia de Licenciamento de Conteúdo (OGL/ORC/SRD).
 - [ ] Criar ADR-030: Orçamento de Performance e Monitoramento de WebVitals.
 - [x] Criar ADR-031: Documentação de Design System (Storybook) e Testes Visuais.
 - [ ] Criar ADR-032: Estratégia de Monetização e Pagamentos (Stripe vs Gateways Locais).
