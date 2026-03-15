@@ -6,13 +6,13 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	// O pacote será criado no próximo passo
-	"github.com/apex20/monorepo/apps/backend/internal/infrastructure/adapter/inbound/http"
+	// Alias para evitar conflito com net/http
+	adapter "github.com/apex20/monorepo/apps/backend/internal/infrastructure/adapter/inbound/http"
 )
 
 func TestHTTPServer_HealthCheck(t *testing.T) {
-	// Setup do Servidor (Isso ainda não compila)
-	server := http.NewChiServer()
+	// Setup do Servidor
+	server := adapter.NewChiServer()
 	
 	// Criando uma requisição de teste
 	req, _ := http.NewRequest(http.MethodGet, "/health", nil)

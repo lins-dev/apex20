@@ -17,12 +17,12 @@
 - [x] Definir `handshake.proto` (Autenticação e Inicialização).
 - [x] Definir `chat.proto` (Mensageria em tempo real).
 - [x] Definir `grid_events.proto` (Movimentação e Estados do mapa).
-- [ ] Implementar scripts de geração de código para Go e TypeScript.
+- [x] Implementar scripts de geração de código para Go e TypeScript.
 
 ## 3. Scaffold de Infraestrutura e Backend
-- [ ] Criar `docker-compose.yml` (PostgreSQL 16, Redis 7, Prometheus).
-- [ ] Configurar `apps/backend` com estrutura de **Arquitetura Hexagonal**.
-- [ ] Configurar `apps/ws-service` com estrutura de **Arquitetura Hexagonal**.
+- [x] Criar `docker-compose.yml` (PostgreSQL 16, Redis 7, Prometheus).
+- [x] Configurar `apps/backend` com estrutura de **Arquitetura Hexagonal**.
+- [ ] Configurar `apps/ws-service` with estrutura de **Arquitetura Hexagonal**.
 - [ ] Inicializar ferramenta de migração **Tern** e configuração do **sqlc**.
 
 ## 4. Pacotes Compartilhados (Core)
