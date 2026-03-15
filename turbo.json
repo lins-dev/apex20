@@ -19,6 +19,11 @@
       "inputs": ["src/**", "package.json", "vitest.config.ts"],
       "outputs": ["coverage/**"]
     },
+    "generate": {
+      "cache": false,
+      "inputs": ["proto/**/*.proto", "buf.gen.yaml", "buf.yaml"],
+      "outputs": ["gen/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
