@@ -1,5 +1,7 @@
 version: v1
 name: buf.build/apex20/contracts
+deps:
+  - buf.build/protocolbuffers/well-known-types
 lint:
   use:
     - DEFAULT
