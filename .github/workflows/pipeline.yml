@@ -37,8 +37,22 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Lint & Type-check
-        run: pnpm turbo lint
+      - name: Go Lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          working-directory: apps/backend
+          args: --timeout=5m
+
+      - name: WS-Service Lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
+          working-directory: apps/ws-service
+          args: --timeout=5m
+
+      - name: Lint & Type-check (TS/JS/Buf)
+        run: pnpm turbo lint --filter=!@apex20/backend --filter=!@apex20/ws-service
 
       - name: Unit Tests
         run: pnpm turbo test
