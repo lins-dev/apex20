@@ -37,19 +37,16 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Go Lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          working-directory: apps/backend
-          args: --timeout=5m
+      - name: Install golangci-lint
+        run: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 
-      - name: WS-Service Lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          working-directory: apps/ws-service
-          args: --timeout=5m
+      - name: Go Lint (Backend)
+        run: |
+          cd apps/backend && golangci-lint run ./...
+
+      - name: Go Lint (WS-Service)
+        run: |
+          cd apps/ws-service && golangci-lint run ./...
 
       - name: Lint & Type-check (TS/JS/Buf)
         run: pnpm turbo lint --filter=!@apex20/backend --filter=!@apex20/ws-service
