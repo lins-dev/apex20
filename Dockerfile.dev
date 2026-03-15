@@ -16,6 +16,9 @@ ENV PATH="/usr/local/go/bin:${PATH}"
 ENV GOPATH="/go"
 ENV PATH="${GOPATH}/bin:${PATH}"
 
+# Instala golangci-lint via go install (Compilado com Go 1.26)
+RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+
 # Instala pnpm v10
 RUN npm install -g pnpm@10
 

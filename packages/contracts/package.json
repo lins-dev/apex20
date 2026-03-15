@@ -5,7 +5,7 @@
   "description": "Protobuf contracts and generated code for Apex20",
   "scripts": {
     "generate": "buf generate",
-    "lint": "buf lint proto",
+    "lint": "buf lint",
     "format": "buf format -w proto",
     "clean": "rm -rf gen/*"
   },
