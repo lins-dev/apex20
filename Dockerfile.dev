@@ -1,0 +1,37 @@
+# Dockerfile.dev - Apex20 Development Environment
+FROM golang:1.26-bookworm AS go-base
+
+FROM node:24-bookworm
+
+# Instala ferramentas básicas
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl \
+    git \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copia o Go da imagem oficial
+COPY --from=go-base /usr/local/go/ /usr/local/go/
+ENV PATH="/usr/local/go/bin:${PATH}"
+ENV GOPATH="/go"
+ENV PATH="${GOPATH}/bin:${PATH}"
+
+# Instala pnpm v10
+RUN npm install -g pnpm@10
+
+# Instala Buf CLI (Protobuf management)
+RUN BIN="/usr/local/bin" && \
+    VERSION="1.30.0" && \
+    curl -sSL \
+    "https://github.com/bufbuild/buf/releases/download/v${VERSION}/buf-$(uname -s)-$(uname -m)" \
+    -o "${BIN}/buf" && \
+    chmod +x "${BIN}/buf"
+
+# Instala plugins do Go para Protobuf
+RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest && \
+    go install connectrpc.com/connect/cmd/protoc-gen-connect-go@latest
+
+WORKDIR /app
+
+# O comando padrão mantém o container vivo para execução de comandos via 'docker compose exec'
+CMD ["sleep", "infinity"]
