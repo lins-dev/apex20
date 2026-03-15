@@ -1,0 +1,17 @@
+{
+  "name": "@apex20/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Protobuf contracts and generated code for Apex20",
+  "scripts": {
+    "generate": "buf generate proto",
+    "lint": "buf lint proto",
+    "format": "buf format -w proto",
+    "clean": "rm -rf gen/*"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "latest",
+    "@bufbuild/protoc-gen-es": "latest",
+    "@connectrpc/protoc-gen-connect-es": "latest"
+  }
+}

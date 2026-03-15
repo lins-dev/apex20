@@ -1,0 +1,17 @@
+version: v1
+plugins:
+  # Go generation
+  - plugin: go
+    out: gen/go
+    opt: paths=source_relative
+  - plugin: connect-go
+    out: gen/go
+    opt: paths=source_relative
+
+  # TypeScript/JavaScript generation (ConnectRPC)
+  - plugin: es
+    out: gen/ts
+    opt: target=ts
+  - plugin: connect-es
+    out: gen/ts
+    opt: target=ts
