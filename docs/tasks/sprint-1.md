@@ -16,7 +16,7 @@
 - [x] Configurar `packages/contracts` com a ferramenta **Buf**.
 - [x] Definir `handshake.proto` (Autenticação e Inicialização).
 - [x] Definir `chat.proto` (Mensageria em tempo real).
-- [ ] Definir `grid_events.proto` (Movimentação e Estados do mapa).
+- [x] Definir `grid_events.proto` (Movimentação e Estados do mapa).
 - [ ] Implementar scripts de geração de código para Go e TypeScript.
 
 ## 3. Scaffold de Infraestrutura e Backend
