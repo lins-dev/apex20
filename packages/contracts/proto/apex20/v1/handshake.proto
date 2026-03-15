@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package apex20.v1;
+
+option go_package = "github.com/apex20/monorepo/packages/contracts/gen/go/apex20/v1;apex20v1";
+
+// HandshakeRequest é a primeira mensagem enviada pelo cliente ao conectar.
+message HandshakeRequest {
+  // Token JWT para autenticação (RS256).
+  string access_token = 1;
+  // ID da campanha que o usuário deseja acessar (UUIDv7).
+  string campaign_id = 2;
+}
+
+// HandshakeResponse confirma o sucesso da conexão e fornece metadados iniciais.
+message HandshakeResponse {
+  bool success = 1;
+  // ID interno do usuário validado pelo JWT.
+  string user_id = 2;
+  // ID da sessão ativa para esta conexão.
+  string session_id = 3;
+  // Detalhes do erro caso success seja false.
+  string error_code = 4;
+}
+
+// SessionService gerencia o ciclo de vida da conexão do usuário.
+service SessionService {
+  // Handshake realiza a autenticação inicial e vinculação à sala.
+  rpc Handshake(HandshakeRequest) returns (HandshakeResponse);
+}
