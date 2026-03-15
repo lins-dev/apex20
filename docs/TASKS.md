@@ -41,6 +41,7 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 
 ## 🛠️ Sprint 1: Infraestrutura e Contratos (Core)
 **Objetivo:** Estabelecer a base do monorepo e comunicação entre serviços.
+**Detalhamento:** Ver [docs/tasks/sprint-1.md](tasks/sprint-1.md)
 
 - [ ] Setup do Monorepo com Turborepo (Go, Next.js, Expo).
 - [ ] Definição de Schemas Protobuf em `packages/contracts` (Handshake, Chat e GridEvents).
