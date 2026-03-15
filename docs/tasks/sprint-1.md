@@ -1,7 +1,7 @@
 # Detalhamento Técnico: Sprint 1 🛠️
 
 **Objetivo:** Estabelecer a base do monorepo, contratos de comunicação e infraestrutura inicial.
-**Status Atual:** 🔴 Não Iniciado
+**Status Atual:** 🟡 Em Progresso
 
 ---
 
@@ -28,8 +28,9 @@
 
 ## 4. Pacotes Compartilhados (Core)
 - [x] Setup de `packages/i18n` com suporte inicial a EN e PT-BR.
-- [ ] Setup de `packages/ui` com **Storybook** e componentes base **shadcn/ui**.
+- [x] Setup de `packages/ui` com **Storybook** e componentes base **shadcn/ui**.
 - [ ] Configurar `packages/sensors` (Sensor Abstraction Layer - ADR-020).
+
 
 ## 5. Validação de Integração Inicial
 - [ ] Implementar teste de "Ping-Pong" entre `backend` e `ws-service` via Redis.

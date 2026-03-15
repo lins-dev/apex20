@@ -18,8 +18,11 @@
   },
   "packageManager": "pnpm@10.32.1",
   "devDependencies": {
+    "@apex20/eslint-config": "workspace:*",
+    "eslint": "^10.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
     "turbo": "latest"
   }
 }
