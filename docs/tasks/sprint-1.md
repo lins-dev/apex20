@@ -23,7 +23,7 @@
 - [x] Criar `docker-compose.yml` (PostgreSQL 16, Redis 7, Prometheus).
 - [x] Configurar `apps/backend` com estrutura de **Arquitetura Hexagonal**.
 - [x] Configurar `apps/ws-service` com estrutura de **Arquitetura Hexagonal**.
-- [ ] Inicializar ferramenta de migração **Tern** e configuração do **sqlc**.
+- [x] Inicializar ferramenta de migração **Tern** e configuração do **sqlc**.
 
 ## 4. Pacotes Compartilhados (Core)
 - [ ] Setup de `packages/i18n` com suporte inicial a EN e PT-BR.
