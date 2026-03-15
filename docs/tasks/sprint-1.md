@@ -26,7 +26,7 @@
 - [x] Inicializar ferramenta de migração **Tern** e configuração do **sqlc**.
 
 ## 4. Pacotes Compartilhados (Core)
-- [ ] Setup de `packages/i18n` com suporte inicial a EN e PT-BR.
+- [x] Setup de `packages/i18n` com suporte inicial a EN e PT-BR.
 - [ ] Setup de `packages/ui` com **Storybook** e componentes base **shadcn/ui**.
 - [ ] Configurar `packages/sensors` (Sensor Abstraction Layer - ADR-020).
 
