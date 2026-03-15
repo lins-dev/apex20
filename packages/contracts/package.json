@@ -4,7 +4,7 @@
   "private": true,
   "description": "Protobuf contracts and generated code for Apex20",
   "scripts": {
-    "generate": "buf generate proto",
+    "generate": "buf generate",
     "lint": "buf lint proto",
     "format": "buf format -w proto",
     "clean": "rm -rf gen/*"

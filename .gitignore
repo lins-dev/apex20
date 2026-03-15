@@ -1,7 +1,42 @@
+# Node
 node_modules/
-.turbo/
+.pnpm-store/
+pnpm-debug.log*
+.npm
+.eslintcache
+
+# Next.js
 .next/
+out/
+
+# Turborepo
+.turbo/
+
+# Build outputs
 dist/
 bin/
+gen/ts/node_modules/
+
+# Go
+gen/go/vendor/
+*.exe
+*.test
+*.prof
+
+# Environment
 .env
-*.log print git init && echo 'node_modules/\n.turbo/\n.next/\ndist/\nbin/\n.env\n*.log' > .gitignore
+.env.local
+.env.*.local
+
+# Docker
+.docker
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
