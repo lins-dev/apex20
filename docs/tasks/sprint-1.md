@@ -9,7 +9,7 @@
 - [x] Criar `pnpm-workspace.yaml` definindo `apps/*` e `packages/*`.
 - [x] Inicializar `package.json` na raiz com scripts de orquestração.
 - [x] Configurar `turbo.json` com pipelines de `build`, `lint`, `test` e `dev`.
-- [ ] Configurar TypeScript Base (`packages/config-typescript`) para compartilhamento de regras.
+- [x] Configurar TypeScript Base (`packages/config-typescript`) para compartilhamento de regras.
 - [ ] Configurar ESLint e Prettier globais integrados ao Turborepo.
 
 ## 2. Contratos e Serialização (Protobuf)
