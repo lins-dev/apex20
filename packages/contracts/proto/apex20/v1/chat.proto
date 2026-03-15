@@ -38,7 +38,7 @@ message ChatMessage {
   MessageType type = 5;
   string text_content = 6;
   RollContent roll_content = 7; // Preenchido apenas se type for ROLL.
-  google.protobuf.timestamp.Timestamp created_at = 8;
+  google.protobuf.Timestamp created_at = 8;
 }
 
 // SendMessageRequest é enviado pelo cliente para o chat.
