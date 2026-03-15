@@ -1,0 +1,13 @@
+{
+  "*.{js,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "*.go": [
+    "golangci-lint run"
+  ],
+  "*.proto": [
+    "buf lint",
+    "buf format -w"
+  ]
+}

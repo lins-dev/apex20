@@ -11,6 +11,7 @@
 - [x] Configurar `turbo.json` com pipelines de `build`, `lint`, `test` e `dev`.
 - [x] Configurar TypeScript Base (`packages/config-typescript`) para compartilhamento de regras.
 - [x] Configurar ESLint e Prettier globais integrados ao Turborepo.
+- [x] Configurar Husky e lint-staged para Git Hooks (Pre-commit linting).
 
 ## 2. Contratos e Serialização (Protobuf)
 - [x] Configurar `packages/contracts` com a ferramenta **Buf**.

@@ -88,7 +88,17 @@ jobs:
             echo "TAGS=ghcr.io/${{ github.repository }}/${{ matrix.service }}:dev,ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.sha }}" >> $GITHUB_OUTPUT
           fi
 
+      - name: Check if Dockerfile exists
+        id: check_files
+        run: |
+          if [ -f ./apps/${{ matrix.service }}/Dockerfile ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
       - name: Build and Push
+        if: steps.check_files.outputs.exists == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
