@@ -6,12 +6,13 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "test": "vitest run",
-    "lint": "eslint src/**",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "build": "tsup src/index.ts --format cjs,esm --dts"
   },
   "devDependencies": {
     "@apex20/config-typescript": "workspace:*",
     "@apex20/eslint-config": "workspace:*",
+    "eslint": "latest",
     "typescript": "latest",
     "vitest": "latest",
     "tsup": "latest"

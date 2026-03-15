@@ -18,6 +18,9 @@ importers:
 
   packages/config-eslint:
     devDependencies:
+      '@eslint/js':
+        specifier: latest
+        version: 10.0.1(eslint@10.0.3)
       '@typescript-eslint/eslint-plugin':
         specifier: latest
         version: 8.57.0(@typescript-eslint/parser@8.57.0(eslint@10.0.3)(typescript@5.9.3))(eslint@10.0.3)(typescript@5.9.3)
@@ -42,6 +45,12 @@ importers:
       eslint-plugin-react-hooks:
         specifier: latest
         version: 7.0.1(eslint@10.0.3)
+      globals:
+        specifier: latest
+        version: 17.4.0
+      typescript-eslint:
+        specifier: latest
+        version: 8.57.0(eslint@10.0.3)(typescript@5.9.3)
 
   packages/config-typescript: {}
 
@@ -65,6 +74,9 @@ importers:
       '@apex20/eslint-config':
         specifier: workspace:*
         version: link:../config-eslint
+      eslint:
+        specifier: latest
+        version: 10.0.3
       tsup:
         specifier: latest
         version: 8.5.1(postcss@8.5.8)(typescript@5.9.3)
@@ -412,6 +424,15 @@ packages:
   '@eslint/core@1.1.1':
     resolution: {integrity: sha512-QUPblTtE51/7/Zhfv8BDwO0qkkzQL7P/aWWbqcf4xWLEYn1oKjdO0gglQBB4GAsu7u6wjijbCmzsUTy6mnk6oQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+
+  '@eslint/js@10.0.1':
+    resolution: {integrity: sha512-zeR9k5pd4gxjZ0abRoIaxdc7I3nDktoXZk2qOv9gCNWx3mVwEn32VRhyLaRsDiJjTs0xq/T8mfPtyuXu7GWBcA==}
+    engines: {node: ^20.19.0 || ^22.13.0 || >=24}
+    peerDependencies:
+      eslint: ^10.0.0
+    peerDependenciesMeta:
+      eslint:
+        optional: true
 
   '@eslint/object-schema@3.0.3':
     resolution: {integrity: sha512-iM869Pugn9Nsxbh/YHRqYiqd23AmIbxJOcpUMOuWCVNdoQJ5ZtwL6h3t0bcZzJUlC3Dq9jCFCESBZnX0GTv7iQ==}
@@ -1459,6 +1480,10 @@ packages:
 
   globals@16.4.0:
     resolution: {integrity: sha512-ob/2LcVVaVGCYN+r14cnwnoDPUufjiYgSqRhiFD0Q1iI4Odora5RE8Iv1D24hAz5oMophRGkGz+yuvQmmUMnMw==}
+    engines: {node: '>=18'}
+
+  globals@17.4.0:
+    resolution: {integrity: sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -2700,6 +2725,10 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
+  '@eslint/js@10.0.1(eslint@10.0.3)':
+    optionalDependencies:
+      eslint: 10.0.3
+
   '@eslint/object-schema@3.0.3': {}
 
   '@eslint/plugin-kit@0.6.1':
@@ -3825,6 +3854,8 @@ snapshots:
       is-glob: 4.0.3
 
   globals@16.4.0: {}
+
+  globals@17.4.0: {}
 
   globalthis@1.0.4:
     dependencies:

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-// @ts-ignore - index ainda não existe
+// @ts-expect-error - index ainda não existe
 import { t } from "./index";
 
 describe("i18n Package", () => {

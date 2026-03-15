@@ -16,9 +16,9 @@ export type Namespace = keyof (typeof locales)["en"];
 export function t(key: string, locale: Locale): string {
   const [ns, k] = key.split(".");
   const dict = locales[locale]?.[ns as Namespace];
-  
+
   if (!dict) return key;
-  
-  // @ts-ignore - indexação dinâmica para simplificar o scaffold
+
+  // @ts-expect-error - indexação dinâmica para simplificar o scaffold
   return dict[k] || key;
 }
