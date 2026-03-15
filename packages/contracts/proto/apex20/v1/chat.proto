@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package apex20.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/apex20/monorepo/packages/contracts/gen/go/apex20/v1;apex20v1";
+
+// MessageType define a natureza da mensagem no chat.
+enum MessageType {
+  MESSAGE_TYPE_UNSPECIFIED = 0;
+  MESSAGE_TYPE_TEXT = 1;
+  MESSAGE_TYPE_ROLL = 2;
+  MESSAGE_TYPE_SYSTEM = 3;
+  MESSAGE_TYPE_GM = 4;
+}
+
+// DieResult contém o resultado individual de um dado.
+message DieResult {
+  int32 sides = 1;
+  int32 value = 2;
+}
+
+// RollContent detalha o resultado de uma rolagem de dados gerada pelo servidor.
+message RollContent {
+  string formula = 1;
+  repeated DieResult dice = 2;
+  int32 total = 3;
+  int32 modifier = 4;
+}
+
+// ChatMessage é a entidade central de comunicação do chat.
+message ChatMessage {
+  string id = 1; // UUIDv7
+  string campaign_id = 2;
+  string user_id = 3;
+  string user_name = 4;
+  MessageType type = 5;
+  string text_content = 6;
+  RollContent roll_content = 7; // Preenchido apenas se type for ROLL.
+  google.protobuf.timestamp.Timestamp created_at = 8;
+}
+
+// SendMessageRequest é enviado pelo cliente para o chat.
+message SendMessageRequest {
+  string campaign_id = 1;
+  string content = 2; // Pode ser texto puro ou comandos (/roll, /gm).
+}
+
+// SendMessageResponse confirma o envio e retorna a mensagem processada.
+message SendMessageResponse {
+  ChatMessage message = 1;
+}
+
+// ChatService orquestra a comunicação textual e rolagens.
+service ChatService {
+  // SendMessage processa e distribui uma nova mensagem ou comando.
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+}
