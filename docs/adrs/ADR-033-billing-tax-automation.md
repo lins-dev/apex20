@@ -39,5 +39,6 @@ Implementar uma arquitetura de faturamento baseada na **Localização do Usuári
 - **Negativas:** Custo por nota emitida nos gateways brasileiros; complexidade na gestão de impostos variáveis por estado/país.
 
 ## Referências
+- **ADR-015:** Privacidade e Segurança (Dados Fiscais).
 - **ADR-018:** Gestão de Cotas de Recursos.
 - **ADR-032:** Estratégia de Monetização e Pagamentos (Polymorphic Mapping).

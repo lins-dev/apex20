@@ -32,6 +32,7 @@ Adotar o **Stripe** como provedor inicial, mas implementar uma arquitetura de **
 - **Negativas:** Pequeno aumento na complexidade de consultas (Join adicional para obter status de pagamento); exige mapeamento rigoroso de status entre diferentes provedores.
 
 ## Referências
+- **ADR-015:** Privacidade e Segurança (Dados Financeiros).
 - **ADR-018:** Gestão de Cotas de Recursos.
 - **ADR-033:** Automação de Faturamento e NF-e.
 - **ADR-034:** Resiliência de Dados (UUIDv7).

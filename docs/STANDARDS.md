@@ -41,12 +41,22 @@ Seguimos o padrão **Semantic Commit** enriquecido com **Gitmoji**.
 - 📝 `docs(arch): update data flow diagram`
 - 🚀 `chore(deps): update all npm packages`
 
-## 🏗️ Fluxo de Trabalho (Git Flow)
+## 🛠️ Stack Tecnológica (Versões Oficiais)
 
-1.  Crie uma branch a partir da `main` (ex: `feat/new-dice-roller`).
-2.  Desenvolva e valide com testes.
-3.  Abra um Pull Request (PR) com uma descrição clara das mudanças.
-4.  Após a aprovação e passagem do CI, realize o **Squash and Merge**.
+Para garantir o padrão **Elite Standard**, o projeto utiliza as seguintes versões:
+- **Node.js:** v24 (Latest LTS).
+- **Go:** v1.26.
+- **pnpm:** v10.x.
+- **PostgreSQL:** v16.
+- **Redis:** v7.
+
+## 🏗️ Fluxo de Trabalho (GitHub Flow Adaptado)
+
+1.  Crie uma branch a partir da `dev` (ex: `feat/new-dice-roller`).
+2.  Desenvolva seguindo o **TDD Rigoroso** (ADR-010).
+3.  Abra um Pull Request (PR) para a branch `dev`.
+4.  Após a aprovação e passagem da esteira de CI (`dev`), realize o Merge.
+5.  A branch `master` é atualizada apenas via promoção da branch `dev` (PR `dev` -> `master`).
 
 ## 🛡️ Segurança
 

@@ -14,7 +14,7 @@ Diferente de APIs REST, as conexões WebSocket são persistentes e de longa dura
 ### 1. Graceful Shutdown (Drenagem de Conexões)
 Implementar um ciclo de vida de terminação suave para o serviço de WebSocket:
 - **SIGTERM Handling:** Ao receber um sinal de desligamento do orquestrador (Docker/K3s), a instância entra em modo de "Drenagem" (Drain).
-- **Interrupção de Handshakes:** A instância para de aceitar novas conexões imediatamente (os Load Balancers redirecionarão novas conexões para as novas instâncias).
+- **Interrupção de Handshakes:** A instância para de aceitar novas conexões imediatamente (os Load Balancers e o roteamento regional por Geo-DNS conforme **ADR-028** redirecionarão novas conexões para as novas instâncias).
 - **Grace Period (Janela de Drenagem):** As conexões ativas são mantidas por um período determinado (ex: 5 a 10 minutos) antes do encerramento forçado.
 
 ### 2. Reconnection Hinting (Reconexão Escalonada)
@@ -43,4 +43,5 @@ O SDK do frontend (Web/Mobile) deve tratar desconexões como eventos "normais":
 ## Referências
 - **ADR-007:** Estratégia de Contratos (Protobuf).
 - **ADR-019:** Escalonamento de WebSockets.
+- **ADR-028:** Distribuição Global e Latência.
 - **ADR-034:** Resiliência de Dados.

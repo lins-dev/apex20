@@ -15,7 +15,7 @@ Criar um ecossistema de **Developer Experience (DX)** centralizado em uma CLI in
     - **Cross-platform:** Execução idêntica em Windows, Linux e Mac sem dependências de shell específicas.
     - **Lógica Avançada:** Suporte a templates complexos, interatividade (prompts) e validações de ambiente que seriam frágeis em scripts shell.
     - **Manutenibilidade:** Código Go tipado e testável em vez de scripts Makefile densos.
-- **Funcionalidades:** `dev`, `gen` (sqlc/proto/tern), `new` (scaffolding), `db` (migrations).
+- **Funcionalidades:** `dev`, `gen` (sqlc/proto/tern), `new` (scaffolding), `db` (migrations), `test` (Unit/Integration com Testcontainers).
 
 ### 2. Orquestração e Cache (Turborepo)
 - O Turborepo gerencia o grafo de dependências e o cache de builds/testes.
@@ -41,3 +41,4 @@ Criar um ecossistema de **Developer Experience (DX)** centralizado em uma CLI in
 - **ADR-001:** Escolha da Stack (Turborepo).
 - **ADR-006:** Padrão de Commits.
 - **ADR-007:** Estratégia de Contratos (Geração de Código).
+- **ADR-010:** Estratégia de Testes (TDD e Testcontainers).

@@ -17,8 +17,9 @@ Implementar um sistema centralizado de **Gestão de Cotas e Limites** baseado em
     - Implementar um serviço de contagem de bytes que atualiza o uso total do usuário no PostgreSQL após cada upload/deleção bem-sucedida.
 3.  **Créditos de IA e Rate Limiting**:
     - O uso de IA (Session Summaries) será controlado por um sistema de créditos mensais ou limites diários rígidos para evitar custos explosivos com APIs de terceiros.
-4.  **Limites de Conexão WebSocket**:
-    - O `apps/ws-service` deve consultar o plano do Mestre da mesa no momento do handshake (ADR-002) e rejeitar novas conexões se o limite da campanha for atingido.
+4.  **Limites de Conexão e Performance WebSocket**:
+    - O `apps/ws-service` deve consultar o plano do Mestre da mesa no momento do handshake (ADR-002) e aplicar os limites de conexão e **taxa de quadros (FPS)**.
+    - **Cota de FPS:** Conforme **ADR-025**, o padrão de entrega é **30 FPS**, com o desbloqueio para **60 FPS** reservado a planos premium.
 5.  **Enforcement Híbrido**:
     - **Redis**: Utilizado para contadores rápidos e temporários (ex: rate limit de mensagens no chat, conexões ativas).
     - **PostgreSQL**: Fonte da verdade para limites persistentes e de longo prazo (ex: GBs de armazenamento).
@@ -38,3 +39,4 @@ Implementar um sistema centralizado de **Gestão de Cotas e Limites** baseado em
 
 ## Referências
 - **ADR-023:** Versionamento de Assets (Deduplicação).
+- **ADR-025:** Gestão de Estados de Jogo (30/60 FPS).

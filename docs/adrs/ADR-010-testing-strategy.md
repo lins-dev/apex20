@@ -13,6 +13,7 @@ Adotar o **TDD (Test-Driven Development)** como metodologia obrigatória e o uso
 - **Mandato:** Nenhuma funcionalidade ou correção de bug deve ser iniciada sem a escrita prévia de um teste que falhe (RED).
 - **Ciclo:** O código deve ser escrito estritamente para fazer o teste passar (GREEN) e, em seguida, limpo e otimizado (REFACTOR).
 - **Cobertura:** Alvo de **100% de cobertura de requisitos** e **> 90% de cobertura de código**. Exceções a este rigor devem ser raras e formalmente justificadas.
+- **TDD para UI (Story-first):** Para componentes de interface em `packages/ui`, o ciclo de TDD inicia-se com a criação da história no **Storybook** (ADR-031) definindo os estados visuais, seguida pela implementação do componente.
 
 ### 2. Infraestrutura de Testes de Integração (Testcontainers)
 - **Proibição:** É terminantemente proibido o uso de SQLite ou bancos em memória para testar camadas de persistência que utilizam PostgreSQL em produção.
@@ -44,4 +45,5 @@ Adotar o **TDD (Test-Driven Development)** como metodologia obrigatória e o uso
 - **ADR-004:** Migrações (Tern e PostgreSQL).
 - **ADR-011:** Sincronização e Resolução de Conflitos.
 - **ADR-019:** Escalonamento de WebSockets (Redis).
+- **ADR-031:** Documentação de Design System e Testes Visuais.
 - **ADR-034:** Resiliência de Dados (UUIDv7).

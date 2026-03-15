@@ -20,10 +20,13 @@ Adotar o ecossistema **OpenTelemetry (OTel)** para rastreamento e **Prometheus**
     - Incluir obrigatoriamente o `TraceID` nos logs para permitir a correlação entre um log de erro e o rastro completo da requisição.
 4.  **Visualização (Grafana)**: 
     - Centralizar a visualização de métricas e traces em dashboards do Grafana.
+5.  **Integração Client-side (Sentry/PostHog)**:
+    - Correlacionar erros do frontend capturados pelo **Sentry** com os Traces do backend via `TraceID`.
+    - Utilizar o **PostHog** para observar a jornada do usuário e identificar onde gargalos de performance (vistos no Grafana) afetam a experiência real.
 
 ## Justificativa
 - **Vendor Agnostic**: O OpenTelemetry permite trocar o backend de observabilidade (ex: mudar de Jaeger para Honeycomb ou Datadog) sem alterar o código da aplicação.
-- **Depuração Precisa**: O rastreamento distribuído permite ver exatamente em qual microserviço uma requisição falhou ou ficou lenta.
+- **Depuração Precisa**: O rastreamento distribuído permite ver exatamente em qual microservço uma requisição falhou ou ficou lenta.
 - **Escalabilidade**: Prometheus é o padrão da indústria para monitoramento de sistemas em containers (Docker/Kubernetes).
 
 ## Consequências
@@ -33,3 +36,6 @@ Adotar o ecossistema **OpenTelemetry (OTel)** para rastreamento e **Prometheus**
 ## Alternativas Consideradas
 - **Logs Simples (STDOUT)**: Rejeitado por ser insuficiente para sistemas distribuídos e de tempo real.
 - **Soluções Proprietárias (New Relic/Datadog)**: Rejeitado nesta fase para evitar custos elevados e lock-in de fornecedor.
+
+## Referências
+- **ADR-024:** Telemetria e Error Tracking (Client-side).
