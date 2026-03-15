@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { GridEvent } from "./grid_events_pb.js";
+import { StreamGridEventsRequest, StreamGridEventsResponse } from "./grid_events_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -21,8 +21,8 @@ export const GridService = {
      */
     streamGridEvents: {
       name: "StreamGridEvents",
-      I: GridEvent,
-      O: GridEvent,
+      I: StreamGridEventsRequest,
+      O: StreamGridEventsResponse,
       kind: MethodKind.BiDiStreaming,
     },
   }

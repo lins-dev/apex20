@@ -320,6 +320,94 @@ func (x *GridState) GetTokens() []*TokenDelta {
 	return nil
 }
 
+type StreamGridEventsRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Event         *GridEvent             `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StreamGridEventsRequest) Reset() {
+	*x = StreamGridEventsRequest{}
+	mi := &file_proto_apex20_v1_grid_events_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamGridEventsRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamGridEventsRequest) ProtoMessage() {}
+
+func (x *StreamGridEventsRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_apex20_v1_grid_events_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamGridEventsRequest.ProtoReflect.Descriptor instead.
+func (*StreamGridEventsRequest) Descriptor() ([]byte, []int) {
+	return file_proto_apex20_v1_grid_events_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *StreamGridEventsRequest) GetEvent() *GridEvent {
+	if x != nil {
+		return x.Event
+	}
+	return nil
+}
+
+type StreamGridEventsResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Event         *GridEvent             `protobuf:"bytes,1,opt,name=event,proto3" json:"event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StreamGridEventsResponse) Reset() {
+	*x = StreamGridEventsResponse{}
+	mi := &file_proto_apex20_v1_grid_events_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamGridEventsResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamGridEventsResponse) ProtoMessage() {}
+
+func (x *StreamGridEventsResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_proto_apex20_v1_grid_events_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamGridEventsResponse.ProtoReflect.Descriptor instead.
+func (*StreamGridEventsResponse) Descriptor() ([]byte, []int) {
+	return file_proto_apex20_v1_grid_events_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *StreamGridEventsResponse) GetEvent() *GridEvent {
+	if x != nil {
+		return x.Event
+	}
+	return nil
+}
+
 var File_proto_apex20_v1_grid_events_proto protoreflect.FileDescriptor
 
 const file_proto_apex20_v1_grid_events_proto_rawDesc = "" +
@@ -351,9 +439,13 @@ const file_proto_apex20_v1_grid_events_proto_rawDesc = "" +
 	"\x05event\"U\n" +
 	"\tGridState\x12\x19\n" +
 	"\bscene_id\x18\x01 \x01(\tR\asceneId\x12-\n" +
-	"\x06tokens\x18\x02 \x03(\v2\x15.apex20.v1.TokenDeltaR\x06tokens2Q\n" +
-	"\vGridService\x12B\n" +
-	"\x10StreamGridEvents\x12\x14.apex20.v1.GridEvent\x1a\x14.apex20.v1.GridEvent(\x010\x01BIZGgithub.com/apex20/monorepo/packages/contracts/gen/go/apex20/v1;apex20v1b\x06proto3"
+	"\x06tokens\x18\x02 \x03(\v2\x15.apex20.v1.TokenDeltaR\x06tokens\"E\n" +
+	"\x17StreamGridEventsRequest\x12*\n" +
+	"\x05event\x18\x01 \x01(\v2\x14.apex20.v1.GridEventR\x05event\"F\n" +
+	"\x18StreamGridEventsResponse\x12*\n" +
+	"\x05event\x18\x01 \x01(\v2\x14.apex20.v1.GridEventR\x05event2n\n" +
+	"\vGridService\x12_\n" +
+	"\x10StreamGridEvents\x12\".apex20.v1.StreamGridEventsRequest\x1a#.apex20.v1.StreamGridEventsResponse(\x010\x01BIZGgithub.com/apex20/monorepo/packages/contracts/gen/go/apex20/v1;apex20v1b\x06proto3"
 
 var (
 	file_proto_apex20_v1_grid_events_proto_rawDescOnce sync.Once
@@ -367,25 +459,29 @@ func file_proto_apex20_v1_grid_events_proto_rawDescGZIP() []byte {
 	return file_proto_apex20_v1_grid_events_proto_rawDescData
 }
 
-var file_proto_apex20_v1_grid_events_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_apex20_v1_grid_events_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_proto_apex20_v1_grid_events_proto_goTypes = []any{
-	(*Vec2)(nil),       // 0: apex20.v1.Vec2
-	(*TokenDelta)(nil), // 1: apex20.v1.TokenDelta
-	(*GridEvent)(nil),  // 2: apex20.v1.GridEvent
-	(*GridState)(nil),  // 3: apex20.v1.GridState
+	(*Vec2)(nil),                     // 0: apex20.v1.Vec2
+	(*TokenDelta)(nil),               // 1: apex20.v1.TokenDelta
+	(*GridEvent)(nil),                // 2: apex20.v1.GridEvent
+	(*GridState)(nil),                // 3: apex20.v1.GridState
+	(*StreamGridEventsRequest)(nil),  // 4: apex20.v1.StreamGridEventsRequest
+	(*StreamGridEventsResponse)(nil), // 5: apex20.v1.StreamGridEventsResponse
 }
 var file_proto_apex20_v1_grid_events_proto_depIdxs = []int32{
 	0, // 0: apex20.v1.TokenDelta.position:type_name -> apex20.v1.Vec2
 	0, // 1: apex20.v1.TokenDelta.scale:type_name -> apex20.v1.Vec2
 	1, // 2: apex20.v1.GridEvent.token_move:type_name -> apex20.v1.TokenDelta
 	1, // 3: apex20.v1.GridState.tokens:type_name -> apex20.v1.TokenDelta
-	2, // 4: apex20.v1.GridService.StreamGridEvents:input_type -> apex20.v1.GridEvent
-	2, // 5: apex20.v1.GridService.StreamGridEvents:output_type -> apex20.v1.GridEvent
-	5, // [5:6] is the sub-list for method output_type
-	4, // [4:5] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	2, // 4: apex20.v1.StreamGridEventsRequest.event:type_name -> apex20.v1.GridEvent
+	2, // 5: apex20.v1.StreamGridEventsResponse.event:type_name -> apex20.v1.GridEvent
+	4, // 6: apex20.v1.GridService.StreamGridEvents:input_type -> apex20.v1.StreamGridEventsRequest
+	5, // 7: apex20.v1.GridService.StreamGridEvents:output_type -> apex20.v1.StreamGridEventsResponse
+	7, // [7:8] is the sub-list for method output_type
+	6, // [6:7] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_proto_apex20_v1_grid_events_proto_init() }
@@ -405,7 +501,7 @@ func file_proto_apex20_v1_grid_events_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_apex20_v1_grid_events_proto_rawDesc), len(file_proto_apex20_v1_grid_events_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

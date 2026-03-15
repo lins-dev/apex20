@@ -10,7 +10,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file proto/apex20/v1/grid_events.proto.
  */
 export const file_proto_apex20_v1_grid_events: GenFile = /*@__PURE__*/
-  fileDesc("CiFwcm90by9hcGV4MjAvdjEvZ3JpZF9ldmVudHMucHJvdG8SCWFwZXgyMC52MSIcCgRWZWMyEgkKAXgYASABKAISCQoBeRgCIAEoAiLOAQoKVG9rZW5EZWx0YRIQCgh0b2tlbl9pZBgBIAEoCRImCghwb3NpdGlvbhgCIAEoCzIPLmFwZXgyMC52MS5WZWMySACIAQESFQoIcm90YXRpb24YAyABKAJIAYgBARIjCgVzY2FsZRgEIAEoCzIPLmFwZXgyMC52MS5WZWMySAKIAQESFwoKaXNfdmlzaWJsZRgFIAEoCEgDiAEBQgsKCV9wb3NpdGlvbkILCglfcm90YXRpb25CCAoGX3NjYWxlQg0KC19pc192aXNpYmxlIpwBCglHcmlkRXZlbnQSEwoLY2FtcGFpZ25faWQYASABKAkSDwoHdXNlcl9pZBgCIAEoCRIrCgp0b2tlbl9tb3ZlGAMgASgLMhUuYXBleDIwLnYxLlRva2VuRGVsdGFIABIWCgx0b2tlbl9kZWxldGUYBCABKAlIABIbChFmb2dfb2Zfd2FyX3VwZGF0ZRgFIAEoCEgAQgcKBWV2ZW50IkQKCUdyaWRTdGF0ZRIQCghzY2VuZV9pZBgBIAEoCRIlCgZ0b2tlbnMYAiADKAsyFS5hcGV4MjAudjEuVG9rZW5EZWx0YTJRCgtHcmlkU2VydmljZRJCChBTdHJlYW1HcmlkRXZlbnRzEhQuYXBleDIwLnYxLkdyaWRFdmVudBoULmFwZXgyMC52MS5HcmlkRXZlbnQoATABQklaR2dpdGh1Yi5jb20vYXBleDIwL21vbm9yZXBvL3BhY2thZ2VzL2NvbnRyYWN0cy9nZW4vZ28vYXBleDIwL3YxO2FwZXgyMHYxYgZwcm90bzM");
+  fileDesc("CiFwcm90by9hcGV4MjAvdjEvZ3JpZF9ldmVudHMucHJvdG8SCWFwZXgyMC52MSIcCgRWZWMyEgkKAXgYASABKAISCQoBeRgCIAEoAiLOAQoKVG9rZW5EZWx0YRIQCgh0b2tlbl9pZBgBIAEoCRImCghwb3NpdGlvbhgCIAEoCzIPLmFwZXgyMC52MS5WZWMySACIAQESFQoIcm90YXRpb24YAyABKAJIAYgBARIjCgVzY2FsZRgEIAEoCzIPLmFwZXgyMC52MS5WZWMySAKIAQESFwoKaXNfdmlzaWJsZRgFIAEoCEgDiAEBQgsKCV9wb3NpdGlvbkILCglfcm90YXRpb25CCAoGX3NjYWxlQg0KC19pc192aXNpYmxlIpwBCglHcmlkRXZlbnQSEwoLY2FtcGFpZ25faWQYASABKAkSDwoHdXNlcl9pZBgCIAEoCRIrCgp0b2tlbl9tb3ZlGAMgASgLMhUuYXBleDIwLnYxLlRva2VuRGVsdGFIABIWCgx0b2tlbl9kZWxldGUYBCABKAlIABIbChFmb2dfb2Zfd2FyX3VwZGF0ZRgFIAEoCEgAQgcKBWV2ZW50IkQKCUdyaWRTdGF0ZRIQCghzY2VuZV9pZBgBIAEoCRIlCgZ0b2tlbnMYAiADKAsyFS5hcGV4MjAudjEuVG9rZW5EZWx0YSI+ChdTdHJlYW1HcmlkRXZlbnRzUmVxdWVzdBIjCgVldmVudBgBIAEoCzIULmFwZXgyMC52MS5HcmlkRXZlbnQiPwoYU3RyZWFtR3JpZEV2ZW50c1Jlc3BvbnNlEiMKBWV2ZW50GAEgASgLMhQuYXBleDIwLnYxLkdyaWRFdmVudDJuCgtHcmlkU2VydmljZRJfChBTdHJlYW1HcmlkRXZlbnRzEiIuYXBleDIwLnYxLlN0cmVhbUdyaWRFdmVudHNSZXF1ZXN0GiMuYXBleDIwLnYxLlN0cmVhbUdyaWRFdmVudHNSZXNwb25zZSgBMAFCSVpHZ2l0aHViLmNvbS9hcGV4MjAvbW9ub3JlcG8vcGFja2FnZXMvY29udHJhY3RzL2dlbi9nby9hcGV4MjAvdjE7YXBleDIwdjFiBnByb3RvMw");
 
 /**
  * Vec2 representa uma coordenada ou vetor bidimensional.
@@ -148,6 +148,40 @@ export const GridStateSchema: GenMessage<GridState> = /*@__PURE__*/
   messageDesc(file_proto_apex20_v1_grid_events, 3);
 
 /**
+ * @generated from message apex20.v1.StreamGridEventsRequest
+ */
+export type StreamGridEventsRequest = Message<"apex20.v1.StreamGridEventsRequest"> & {
+  /**
+   * @generated from field: apex20.v1.GridEvent event = 1;
+   */
+  event?: GridEvent;
+};
+
+/**
+ * Describes the message apex20.v1.StreamGridEventsRequest.
+ * Use `create(StreamGridEventsRequestSchema)` to create a new message.
+ */
+export const StreamGridEventsRequestSchema: GenMessage<StreamGridEventsRequest> = /*@__PURE__*/
+  messageDesc(file_proto_apex20_v1_grid_events, 4);
+
+/**
+ * @generated from message apex20.v1.StreamGridEventsResponse
+ */
+export type StreamGridEventsResponse = Message<"apex20.v1.StreamGridEventsResponse"> & {
+  /**
+   * @generated from field: apex20.v1.GridEvent event = 1;
+   */
+  event?: GridEvent;
+};
+
+/**
+ * Describes the message apex20.v1.StreamGridEventsResponse.
+ * Use `create(StreamGridEventsResponseSchema)` to create a new message.
+ */
+export const StreamGridEventsResponseSchema: GenMessage<StreamGridEventsResponse> = /*@__PURE__*/
+  messageDesc(file_proto_apex20_v1_grid_events, 5);
+
+/**
  * GridService gerencia a sincronização de alta frequência do mapa.
  *
  * @generated from service apex20.v1.GridService
@@ -160,8 +194,8 @@ export const GridService: GenService<{
    */
   streamGridEvents: {
     methodKind: "bidi_streaming";
-    input: typeof GridEventSchema;
-    output: typeof GridEventSchema;
+    input: typeof StreamGridEventsRequestSchema;
+    output: typeof StreamGridEventsResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_proto_apex20_v1_grid_events, 0);

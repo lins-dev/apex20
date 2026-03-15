@@ -38,8 +38,16 @@ message GridState {
   repeated TokenDelta tokens = 2;
 }
 
+message StreamGridEventsRequest {
+  GridEvent event = 1;
+}
+
+message StreamGridEventsResponse {
+  GridEvent event = 1;
+}
+
 // GridService gerencia a sincronização de alta frequência do mapa.
 service GridService {
   // StreamGridEvents permite o envio e recebimento bidirecional de eventos de grid.
-  rpc StreamGridEvents(stream GridEvent) returns (stream GridEvent);
+  rpc StreamGridEvents(stream StreamGridEventsRequest) returns (stream StreamGridEventsResponse);
 }

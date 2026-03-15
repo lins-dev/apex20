@@ -41,7 +41,7 @@ const (
 // GridServiceClient is a client for the apex20.v1.GridService service.
 type GridServiceClient interface {
 	// StreamGridEvents permite o envio e recebimento bidirecional de eventos de grid.
-	StreamGridEvents(context.Context) *connect.BidiStreamForClient[v1.GridEvent, v1.GridEvent]
+	StreamGridEvents(context.Context) *connect.BidiStreamForClient[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse]
 }
 
 // NewGridServiceClient constructs a client for the apex20.v1.GridService service. By default, it
@@ -55,7 +55,7 @@ func NewGridServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 	baseURL = strings.TrimRight(baseURL, "/")
 	gridServiceMethods := v1.File_proto_apex20_v1_grid_events_proto.Services().ByName("GridService").Methods()
 	return &gridServiceClient{
-		streamGridEvents: connect.NewClient[v1.GridEvent, v1.GridEvent](
+		streamGridEvents: connect.NewClient[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse](
 			httpClient,
 			baseURL+GridServiceStreamGridEventsProcedure,
 			connect.WithSchema(gridServiceMethods.ByName("StreamGridEvents")),
@@ -66,18 +66,18 @@ func NewGridServiceClient(httpClient connect.HTTPClient, baseURL string, opts ..
 
 // gridServiceClient implements GridServiceClient.
 type gridServiceClient struct {
-	streamGridEvents *connect.Client[v1.GridEvent, v1.GridEvent]
+	streamGridEvents *connect.Client[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse]
 }
 
 // StreamGridEvents calls apex20.v1.GridService.StreamGridEvents.
-func (c *gridServiceClient) StreamGridEvents(ctx context.Context) *connect.BidiStreamForClient[v1.GridEvent, v1.GridEvent] {
+func (c *gridServiceClient) StreamGridEvents(ctx context.Context) *connect.BidiStreamForClient[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse] {
 	return c.streamGridEvents.CallBidiStream(ctx)
 }
 
 // GridServiceHandler is an implementation of the apex20.v1.GridService service.
 type GridServiceHandler interface {
 	// StreamGridEvents permite o envio e recebimento bidirecional de eventos de grid.
-	StreamGridEvents(context.Context, *connect.BidiStream[v1.GridEvent, v1.GridEvent]) error
+	StreamGridEvents(context.Context, *connect.BidiStream[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse]) error
 }
 
 // NewGridServiceHandler builds an HTTP handler from the service implementation. It returns the path
@@ -106,6 +106,6 @@ func NewGridServiceHandler(svc GridServiceHandler, opts ...connect.HandlerOption
 // UnimplementedGridServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedGridServiceHandler struct{}
 
-func (UnimplementedGridServiceHandler) StreamGridEvents(context.Context, *connect.BidiStream[v1.GridEvent, v1.GridEvent]) error {
+func (UnimplementedGridServiceHandler) StreamGridEvents(context.Context, *connect.BidiStream[v1.StreamGridEventsRequest, v1.StreamGridEventsResponse]) error {
 	return connect.NewError(connect.CodeUnimplemented, errors.New("apex20.v1.GridService.StreamGridEvents is not implemented"))
 }
