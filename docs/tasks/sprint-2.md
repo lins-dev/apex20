@@ -7,7 +7,7 @@
 ## 1. Fundação do Front Web (Next.js) e Identidade Visual
 - [x] **Scaffold Next.js:** Inicializar `apps/web` usando Next.js 15+ (App Router) e TypeScript.
 - [x] **Definição do Padrão Visual:** Estabelecer o guia de estilo para componentes (Typography, Spacing, Shadow patterns) em `packages/ui` para evitar estilos genéricos.
-- [ ] **Integration UI:** Configurar o consumo de `@apex20/ui` e sincronizar o Tailwind local com os tokens do monorepo.
+- [x] **Integration UI:** Configurar o consumo de `@apex20/ui` e sincronizar o Tailwind local com os tokens do monorepo.
 - [ ] **Landing Page (MVP):** Criar a página inicial com estética "Linear-like", focada em alta performance e conversão.
 - [ ] **ConnectRPC Client:** Configurar o cliente de comunicação tipada para consumir os contratos de `packages/contracts`.
 - [ ] **i18n Implementation:** Integrar `@apex20/i18n` para suporte multi-idioma na interface.
