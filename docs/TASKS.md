@@ -37,6 +37,8 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Criar ADR-031: Documentação de Design System (Storybook) e Testes Visuais.
 - [x] Criar ADR-032: Estratégia de Monetização e Pagamentos (Stripe vs Gateways Locais).
 - [x] Criar ADR-033: Automação de Faturamento e Emissão de Notas Fiscais (NF-e).
+- [x] Criar ADR-035: Esteira de Integridade e Qualidade (CI/CD).
+- [x] Criar ADR-036: Arquitetura Frontend Modular (Feature-based).
 - [x] Validar Fluxo de CI/CD inicial e Docker Registry.
 
 ## 🛠️ Sprint 1: Infraestrutura e Contratos (Core)
