@@ -6,7 +6,7 @@
   "types": "./src/index.ts",
   "scripts": {
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --no-open --host 0.0.0.0",
     "build-storybook": "storybook build",
     "test:visual": "playwright test",
     "type-check": "tsc --noEmit"
@@ -41,6 +41,7 @@
     "tailwindcss": "^3.4.15",
     "typescript": "latest",
     "vite": "^6.0.1",
+    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "latest"
   },
   "dependencies": {

@@ -40,3 +40,5 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+storybook-static
+.turbo
