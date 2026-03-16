@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { colors } from "./colors";
 import { typography } from "./typography";
 import { spacing } from "./spacing";
-import { shadows, borderRadius } from "./shadows";
 
 const meta: Meta = {
   title: "Design Tokens",
