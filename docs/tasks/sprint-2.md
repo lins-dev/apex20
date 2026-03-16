@@ -2,17 +2,24 @@
 
 **Objetivo:** Inicializar a aplicação Web, definir a identidade visual base e implementar o grid interativo com sincronização.
 **Status Atual:** 🟡 Em Progresso
-
 ---
 
 ## 1. Fundação do Front Web (Next.js) e Identidade Visual
 - [x] **Scaffold Next.js:** Inicializar `apps/web` usando Next.js 15+ (App Router) e TypeScript.
 - [x] **Definição do Padrão Visual:** Estabelecer o guia de estilo para componentes (Typography, Spacing, Shadow patterns) em `packages/ui` para evitar estilos genéricos.
 - [ ] **Integration UI:** Configurar o consumo de `@apex20/ui` e sincronizar o Tailwind local com os tokens do monorepo.
+- [ ] **Landing Page (MVP):** Criar a página inicial com estética "Linear-like", focada em alta performance e conversão.
 - [ ] **ConnectRPC Client:** Configurar o cliente de comunicação tipada para consumir os contratos de `packages/contracts`.
 - [ ] **i18n Implementation:** Integrar `@apex20/i18n` para suporte multi-idioma na interface.
 
-## 2. Gestão de Estado e Sincronização
+## 2. Autenticação e Cadastro (Novo 🔐)
+- [ ] **Auth Schema:** Criar migração para a tabela `users` (UUIDv7, Argon2 hashing) com suporte a Roles (**GM, Player, Trusted**) e Permissions.
+- [ ] **Auth API:** Implementar endpoints de `SignUp` e `SignIn` no `apps/backend` via ConnectRPC, incluindo a atribuição inicial de Role.
+- [ ] **Auth UI (Modules):** Criar o módulo de autenticação no frontend (`modules/auth`) com formulários e lógica de proteção de rotas por Role.
+- [ ] **JWT/RS256:** Implementar a geração e validação de tokens assimétricos contendo a claim `role` para autorização cross-service (ADR-002).
+
+## 3. Gestão de Estado e Sincronização
+...
 - [ ] **State Orchestration:** Configurar **Zustand** para estado global e **XState** para máquinas de estado de jogo (ADR-025).
 - [ ] **WebSocket Client:** Implementar o hook de conexão resiliente com o `ws-service` (exponential backoff).
 - [ ] **Auth Integration:** Implementar o fluxo de persistência e envio do JWT (RS256) nos headers das requisições e no Handshake do WS (ADR-002).
