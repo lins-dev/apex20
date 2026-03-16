@@ -39,12 +39,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
-          cache: "pnpm"
+          cache: 'pnpm'
           
       - name: Setup Go (1.26)
         uses: actions/setup-go@v5
         with:
-          go-version: "1.26"
+          go-version: '1.26'
           cache: false
 
       - name: Install Dependencies
@@ -72,7 +72,7 @@ jobs:
   deploy:
     name: Build & Push Docker Images 🐳
     needs: quality
-    if: github.event_name == "push" && (github.ref == "refs/heads/master" || github.ref == "refs/heads/dev")
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -97,7 +97,7 @@ jobs:
       - name: Set Docker Tags
         id: tags
         run: |
-          if [[ "${{ github.ref }}" == "refs/heads/master" ]]; then
+          if [[ '${{ github.ref }}' == 'refs/heads/master' ]]; then
             echo "TAGS=ghcr.io/${{ github.repository }}/${{ matrix.service }}:latest,ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.sha }}" >> $GITHUB_OUTPUT
           else
             echo "TAGS=ghcr.io/${{ github.repository }}/${{ matrix.service }}:dev,ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.sha }}" >> $GITHUB_OUTPUT
@@ -113,7 +113,7 @@ jobs:
           fi
 
       - name: Build and Push
-        if: steps.check_files.outputs.exists == "true"
+        if: steps.check_files.outputs.exists == 'true'
         uses: docker/build-push-action@v5
         with:
           context: .
