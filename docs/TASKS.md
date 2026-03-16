@@ -43,14 +43,14 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 **Objetivo:** Estabelecer a base do monorepo e comunicação entre serviços.
 **Detalhamento:** Ver [docs/tasks/sprint-1.md](tasks/sprint-1.md)
 
-- [ ] Setup do Monorepo com Turborepo (Go, Next.js, Expo).
-- [ ] Definição de Schemas Protobuf em `packages/contracts` (Handshake, Chat e GridEvents).
-- [ ] Implementação do Middleware de Permissões de Grid (ACL: Quem move o quê).
-- [ ] Configuração do Backend Go (Chi + Arquitetura Hexagonal + sqlc).
-- [ ] Setup do Docker Compose local (PostgreSQL, Redis, Prometheus/Grafana).
-- [ ] Implementação do serviço de WebSocket básico com Redis Pub/Sub.
-- [ ] Boilerplate da aplicação Next.js com shadcn/ui.
-- [ ] Setup inicial de `packages/i18n` (EN, PT-BR, ES, FR).
+- [x] Setup do Monorepo com Turborepo (Go, Next.js, Expo).
+- [x] Definição de Schemas Protobuf em `packages/contracts` (Handshake, Chat e GridEvents).
+- [x] Implementação do Middleware de Permissões de Grid (ACL: Quem move o quê).
+- [x] Configuração do Backend Go (Chi + Arquitetura Hexagonal + sqlc).
+- [x] Setup do Docker Compose local (PostgreSQL, Redis, Prometheus/Grafana).
+- [x] Implementação do serviço de WebSocket básico com Redis Pub/Sub.
+- [x] Boilerplate da aplicação Next.js com shadcn/ui.
+- [x] Setup inicial de `packages/i18n` (EN, PT-BR, ES, FR).
 
 ## ⚔️ Sprint 2: Mecânicas de Jogo e Sincronização
 **Objetivo:** Implementar o grid e o sistema de combate em tempo real.
