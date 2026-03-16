@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_ENV", "REDIS_URL", "DATABASE_URL"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -17,7 +18,8 @@
     "test": {
       "dependsOn": ["^build"],
       "inputs": ["src/**", "package.json", "vitest.config.ts"],
-      "outputs": ["coverage/**"]
+      "outputs": ["coverage/**"],
+      "env": ["REDIS_URL", "DATABASE_URL"]
     },
     "generate": {
       "cache": false,

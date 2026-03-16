@@ -3,8 +3,11 @@
     "eslint --fix",
     "prettier --write"
   ],
-  "*.go": [
-    "golangci-lint run"
+  "apps/backend/**/*.go": [
+    "sh -c 'cd apps/backend && golangci-lint run ./...'"
+  ],
+  "apps/ws-service/**/*.go": [
+    "sh -c 'cd apps/ws-service && golangci-lint run ./...'"
   ],
   "*.proto": [
     "buf lint",

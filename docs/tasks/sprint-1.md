@@ -33,8 +33,8 @@
 
 
 ## 5. Validação de Integração Inicial
-- [ ] Implementar teste de "Ping-Pong" entre `backend` e `ws-service` via Redis.
-- [ ] Validar pipeline de CI rodando os primeiros testes de infraestrutura.
+- [x] Implementar teste de "Ping-Pong" entre `backend` e `ws-service` via Redis.
+- [x] Validar pipeline de CI rodando os primeiros testes de infraestrutura.
 
 ---
 **Critério de Aceite da Sprint:** O comando `apex20 dev` deve subir todos os serviços e o comando `apex20 test` deve passar com 100% de cobertura nos boilerplates.
