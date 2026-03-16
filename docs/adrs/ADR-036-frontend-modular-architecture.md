@@ -47,3 +47,4 @@ src/
 - **ADR-001:** Escolha da Stack Tecnológica.
 - **ADR-025:** Gestão de Estados de Jogo (Zustand/XState).
 - **ADR-034:** Resiliência de Dados e Isolamento por Tenant.
+- **Contexto Visual:** [VTT Wireframes & Walkthrough](../wireframes/vtt-walkthrough.md).
