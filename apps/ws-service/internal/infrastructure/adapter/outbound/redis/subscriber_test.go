@@ -23,13 +23,29 @@ func TestRedisSubscriber_Subscribe(t *testing.T) {
 	channel := "test-channel"
 
 	t.Run("should initialize and handle context cancellation", func(t *testing.T) {
+		var opt *redis.Options
+		var err error
+
+		redisURL := os.Getenv("REDIS_URL")
 		redisAddr := os.Getenv("REDIS_ADDR")
-		if redisAddr == "" && !testing.Short() {
-			t.Fatal("REDIS_ADDR environment variable is required for this test")
+
+		if redisURL != "" {
+			opt, err = redis.ParseURL(redisURL)
+			if err != nil {
+				t.Fatalf("failed to parse REDIS_URL: %v", err)
+			}
+		} else if redisAddr != "" {
+			opt = &redis.Options{Addr: redisAddr}
+		} else {
+			if testing.Short() {
+				t.Skip("skipping redis test: REDIS_URL or REDIS_ADDR not set")
+			} else {
+				t.Fatal("REDIS_URL or REDIS_ADDR environment variable is required for this test")
+			}
 		}
 
-		// Use a client with address from environment
-		client := redis.NewClient(&redis.Options{Addr: redisAddr})
+		// Use a client with options from environment
+		client := redis.NewClient(opt)
 		subscriber := NewRedisSubscriber(client)
 
 		// This will still fail because of pubsub.Receive(ctx) in the adapter
