@@ -9,6 +9,7 @@
     "lint": "turbo lint",
     "test": "turbo test",
     "type-check": "turbo type-check",
+    "storybook": "turbo storybook",
     "generate": "turbo run generate",
     "prepare": "husky"
   },
