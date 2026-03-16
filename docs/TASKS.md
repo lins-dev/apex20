@@ -52,7 +52,7 @@ Este documento detalha as Sprints planejadas para o desenvolvimento do **Apex20*
 - [x] Boilerplate da aplicação Next.js com shadcn/ui.
 - [x] Setup inicial de `packages/i18n` (EN, PT-BR, ES, FR).
 
-## ⚔️ Sprint 2: Mecânicas de Jogo e Sincronização
+## ⚔️ Sprint 2: Mecânicas de Jogo e Sincronização (🟡 Em Progresso)
 **Objetivo:** Implementar o grid e o sistema de combate em tempo real.
 
 - [ ] Sistema de Grid com movimentação de tokens (Optimistic UI).
