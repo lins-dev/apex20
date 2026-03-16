@@ -41,6 +41,7 @@ services:
       dockerfile: Dockerfile.dev
     container_name: apex20-app
     ports:
+      - "3020:3000"
       - "6020:6006"
     volumes:
       - .:/app
