@@ -29,7 +29,7 @@
 ## 4. Pacotes Compartilhados (Core)
 - [x] Setup de `packages/i18n` com suporte inicial a EN e PT-BR.
 - [x] Setup de `packages/ui` com **Storybook** e componentes base **shadcn/ui**.
-- [ ] Configurar `packages/sensors` (Sensor Abstraction Layer - ADR-020).
+- [x] Configurar `packages/sensors` (Sensor Abstraction Layer - ADR-020).
 
 
 ## 5. Validação de Integração Inicial

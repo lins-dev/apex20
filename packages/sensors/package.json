@@ -1,0 +1,19 @@
+{
+  "name": "@apex20/sensors",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@apex20/config-typescript": "workspace:*",
+    "@apex20/eslint-config": "workspace:*",
+    "eslint": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  }
+}
