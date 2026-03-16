@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: apex20
     ports:
-      - "5432:5432"
+      - "5420:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -20,7 +20,7 @@ services:
     image: redis:7-alpine
     container_name: apex20-cache
     ports:
-      - "6379:6379"
+      - "6320:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -31,7 +31,7 @@ services:
     image: prom/prometheus:latest
     container_name: apex20-prometheus
     ports:
-      - "9090:9090"
+      - "9020:9090"
     volumes:
       - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -41,7 +41,7 @@ services:
       dockerfile: Dockerfile.dev
     container_name: apex20-app
     ports:
-      - "6006:6006"
+      - "6020:6006"
     volumes:
       - .:/app
       - /app/node_modules

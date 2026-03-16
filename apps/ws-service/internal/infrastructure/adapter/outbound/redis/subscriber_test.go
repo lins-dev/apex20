@@ -2,6 +2,7 @@ package redis
 
 import (
 	"context"
+	"os"
 	"testing"
 
 	"github.com/redis/go-redis/v9"
@@ -22,8 +23,13 @@ func TestRedisSubscriber_Subscribe(t *testing.T) {
 	channel := "test-channel"
 
 	t.Run("should initialize and handle context cancellation", func(t *testing.T) {
-		// Use a dummy client that doesnt dial
-		client := redis.NewClient(&redis.Options{Addr: "localhost:6379"})
+		redisAddr := os.Getenv("REDIS_ADDR")
+		if redisAddr == "" && !testing.Short() {
+			t.Fatal("REDIS_ADDR environment variable is required for this test")
+		}
+
+		// Use a client with address from environment
+		client := redis.NewClient(&redis.Options{Addr: redisAddr})
 		subscriber := NewRedisSubscriber(client)
 
 		// This will still fail because of pubsub.Receive(ctx) in the adapter
