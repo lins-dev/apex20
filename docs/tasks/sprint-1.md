@@ -1,7 +1,7 @@
 # Detalhamento Técnico: Sprint 1 🛠️
 
 **Objetivo:** Estabelecer a base do monorepo, contratos de comunicação e infraestrutura inicial.
-**Status Atual:** 🟡 Em Progresso
+**Status Atual:** 🟢 Concluído
 
 ---
 
