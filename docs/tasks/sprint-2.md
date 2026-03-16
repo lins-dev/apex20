@@ -1,12 +1,12 @@
 # Detalhamento Técnico: Sprint 2 ⚔️
 
 **Objetivo:** Inicializar a aplicação Web, definir a identidade visual base e implementar o grid interativo com sincronização.
-**Status Atual:** 🔴 Não Iniciado
+**Status Atual:** 🟡 Em Progresso
 
 ---
 
 ## 1. Fundação do Front Web (Next.js) e Identidade Visual
-- [ ] **Scaffold Next.js:** Inicializar `apps/web` usando Next.js 15+ (App Router) e TypeScript.
+- [x] **Scaffold Next.js:** Inicializar `apps/web` usando Next.js 15+ (App Router) e TypeScript.
 - [ ] **Definição do Padrão Visual:** Estabelecer o guia de estilo para componentes (Typography, Spacing, Shadow patterns) em `packages/ui` para evitar estilos genéricos.
 - [ ] **Integration UI:** Configurar o consumo de `@apex20/ui` e sincronizar o Tailwind local com os tokens do monorepo.
 - [ ] **ConnectRPC Client:** Configurar o cliente de comunicação tipada para consumir os contratos de `packages/contracts`.
