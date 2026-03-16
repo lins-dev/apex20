@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 import { colors } from "./src/tokens/colors";
+import { typography } from "./src/tokens/typography";
+import { spacing } from "./src/tokens/spacing";
+import { shadows, borderRadius } from "./src/tokens/shadows";
 import tailwindAnimate from "tailwindcss-animate";
 
 const config: Config = {
@@ -20,11 +23,13 @@ const config: Config = {
     },
     extend: {
       colors,
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
+      spacing,
+      boxShadow: shadows,
+      borderRadius,
+      fontFamily: typography.fontFamily,
+      fontSize: typography.fontSize,
+      fontWeight: typography.fontWeight,
+      lineHeight: typography.lineHeight,
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

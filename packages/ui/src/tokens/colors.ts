@@ -1,40 +1,64 @@
 /**
- * Apex20 Design Tokens - Colors
- * Siga os padrões do shadcn/ui para compatibilidade
+ * Apex20 Design Tokens - Colors 🎨
+ * Based on the Linear-style VTT Wireframe (deep purple aesthetic)
  */
 
 export const colors = {
-  background: "hsl(240 10% 3.9%)",
-  foreground: "hsl(0 0% 98%)",
-  card: {
-    DEFAULT: "hsl(240 10% 3.9%)",
-    foreground: "hsl(0 0% 98%)",
+  // Dark Mode (Default)
+  dark: {
+    bg: {
+      base: "#0a0514",
+      surface: "#110a20",
+      elevated: "#1a1030",
+      overlay: "rgba(10, 5, 20, 0.85)",
+      hover: "rgba(139, 92, 246, 0.08)",
+      active: "rgba(139, 92, 246, 0.14)",
+    },
+    border: {
+      subtle: "rgba(139, 92, 246, 0.10)",
+      default: "rgba(139, 92, 246, 0.18)",
+      strong: "rgba(139, 92, 246, 0.30)",
+    },
+    text: {
+      primary: "#ede9f6",
+      secondary: "#9b8ec4",
+      tertiary: "#675b85",
+      disabled: "#4a3d6a",
+    },
+    accent: {
+      base: "#8b5cf6",
+      hover: "#a78bfa",
+      muted: "rgba(139, 92, 246, 0.20)",
+      glow: "rgba(139, 92, 246, 0.35)",
+    },
   },
-  popover: {
-    DEFAULT: "hsl(240 10% 3.9%)",
-    foreground: "hsl(0 0% 98%)",
+
+  // Light Mode (Accessible)
+  light: {
+    bg: {
+      base: "#f8f6fc",
+      surface: "#ffffff",
+      elevated: "#f0ecf9",
+      overlay: "rgba(248, 246, 252, 0.90)",
+      hover: "rgba(139, 92, 246, 0.06)",
+      active: "rgba(139, 92, 246, 0.10)",
+    },
+    border: {
+      subtle: "rgba(139, 92, 246, 0.10)",
+      default: "rgba(139, 92, 246, 0.18)",
+      strong: "rgba(139, 92, 246, 0.28)",
+    },
+    text: {
+      primary: "#1a1028",
+      secondary: "#5b4f78",
+      tertiary: "#8a7faa",
+      disabled: "#b8b0cc",
+    },
+    accent: {
+      base: "#7c3aed",
+      hover: "#6d28d9",
+      muted: "rgba(124, 58, 237, 0.12)",
+      glow: "rgba(124, 58, 237, 0.15)",
+    },
   },
-  primary: {
-    DEFAULT: "hsl(0 72.2% 50.6%)", // Apex Red
-    foreground: "hsl(0 0% 98%)",
-  },
-  secondary: {
-    DEFAULT: "hsl(240 3.7% 15.9%)",
-    foreground: "hsl(0 0% 98%)",
-  },
-  muted: {
-    DEFAULT: "hsl(240 3.7% 15.9%)",
-    foreground: "hsl(240 5% 64.9%)",
-  },
-  accent: {
-    DEFAULT: "hsl(240 3.7% 15.9%)",
-    foreground: "hsl(0 0% 98%)",
-  },
-  destructive: {
-    DEFAULT: "hsl(0 62.8% 30.6%)",
-    foreground: "hsl(0 0% 98%)",
-  },
-  border: "hsl(240 3.7% 15.9%)",
-  input: "hsl(240 3.7% 15.9%)",
-  ring: "hsl(0 72.2% 50.6%)",
-} as const;
+};
